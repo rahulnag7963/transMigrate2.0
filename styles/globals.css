@@ -1,0 +1,664 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+html,body{
+  overflow: hidden;
+  overflow-anchor: none;
+  overflow-y: hidden;
+  cursor: url('../media/circle.svg'), default;
+  cursor: url('../media/circle.svg'), pointer;
+}
+
+button, svg ,ul ,nav, li, span,a{
+  cursor: url('../media/circle.svg'), pointer !important;
+}
+
+.one{  
+  position: absolute;
+  height: 50vh;
+  width: 50vh;
+  border-radius: 50%;
+  background: linear-gradient(80deg, #3f51b1 , #7b5fac, #ca3419);
+  filter: blur(80px);
+  animation: down 10s infinite;
+  z-index: 2;
+}
+.two{  
+  position: absolute;
+  height: 70vh;
+  width: 50vh;
+  border-radius: 50%;
+  background: linear-gradient(80deg, #7687e6 , #905beb, #e72e16);
+  filter: blur(80px);
+  z-index: 2;
+  animation: up 10s infinite;
+}
+.three{
+  position: absolute;
+  height: 40vh;
+  width: 60vh;
+  border-radius: 50%;
+  background: linear-gradient(80deg,#ee6452, #697ce2 , #5d13dd,);
+  filter: blur(80px);
+  z-index: 2;
+  animation: left 10s infinite;
+}
+.four{
+  position: absolute;
+  height: 30vh;
+  width: 50vh;
+  border-radius: 50%;
+  background: linear-gradient(80deg, #576ffa , #8c4ff5, #fc2003);
+  filter: blur(80px);
+  z-index: 2;
+  animation: right 20s infinite;
+}
+
+@keyframes down {
+  70% {
+    transform: translate(60vh);
+  }
+}
+
+@keyframes up {
+  70% {
+    transform: scale(1.5) translate(20vh);
+  }
+}
+
+@keyframes left {
+  0%, 100% {
+    left: -100px;
+  }
+  70% {
+    left: 1300px;
+  }
+}
+
+@keyframes right {
+  0%, 100%{
+    transform: rotate(0deg);
+  }
+  70% {
+    transform: rotate(2turn);
+  }
+}
+
+
+.triangle{
+  z-index: -1;
+  stroke: white;
+  display: inline-block;
+  stroke-opacity: 1;
+}
+
+#Triangle-up{
+  opacity: 1;
+  transition: all 1.4s;
+}
+
+#Triangle-up:hover{
+ opacity: 1;
+ transition: all 1.4s;
+}
+
+.triangle:hover{
+  opacity: 1.0;
+}
+
+.main{
+  margin-bottom: -10rem;
+}
+
+.fade{
+  transition: opacity 0.5s ease;
+}
+
+.cont{
+  padding: 10px 20px;
+  text-transform: uppercase;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: 500;
+  color: #ffffff80;
+  text-shadow: none;
+  background: transparent;
+  cursor: pointer;
+  box-shadow: transparent;
+  border: 1px solid #ffffff80;
+  transition: 0.5s ease;
+  user-select: none;
+  cursor: url('../media/circle.svg'), pointer;
+}
+
+div h2 button{
+  padding-bottom: 0rem !important;
+}
+
+div h2 button div span{
+  padding: 2rem;
+}
+
+.text-foreground{
+  font-size: 3.75rem !important;
+
+}
+
+.unset{
+  padding-bottom: unset !important;
+}
+
+.unset:hover,:focus{
+  color:unset !important;
+  background-color: unset !important;
+  border:unset !important;
+  text-shadow: unset !important;
+  box-shadow: unset !important;
+  padding-bottom: unset !important;
+
+}
+
+.cont:hover,:focus {
+  color: #ffffff;
+  background: #f31260;
+  border: 1px solid #f31260;
+  text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 20px #ffffff;
+  box-shadow: 0 0 5px #f31260, 0 0 20px #f31260, 0 0 50px #f31260,
+    0 0 100px #f31260;
+    cursor: url('../media/circle.svg'), pointer;
+}
+
+.social-card {
+  height: fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  gap: 20px;
+  padding: 20px 25px;
+  border-radius: 14px;
+}
+.Btn {
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: transparent;
+  position: relative;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: all 0.3s;
+  cursor: url('../media/circle.svg'), pointer;
+
+}
+
+.svgContainer {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  backdrop-filter: blur(0px);
+  letter-spacing: 0.8px;
+  border-radius: 10px;
+  transition: all 0.3s;
+  border: 1px solid rgba(156, 156, 156, 0.466);
+  z-index: 2;
+}
+
+.BG {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #181818;
+  z-index: 1;
+  border-radius: 10px;
+  pointer-events: none;
+  transition: all 0.3s;
+  font-size: 0px;
+  cursor: url('../media/circle.svg'), pointer;
+
+}
+.github .BG {
+  background: #181818;
+  cursor: url('../media/circle.svg'), pointer;
+
+}
+.linkdin .BG {
+  background: #0077b5;
+  cursor: url('../media/circle.svg'), pointer;
+
+}
+.Btn:hover .BG {
+  transform: scale(1.5);
+  /* transform-origin: bottom; */
+  font-size: 20px;
+  color: white;
+  cursor: url('../media/circle.svg'), pointer;
+
+}
+
+.Btn:hover .svgContainer {
+  border: 1px solid rgba(216, 216, 216, 0.466);
+  background-color: rgba(209, 209, 209, 0.466);
+  backdrop-filter: blur(4px);
+  cursor: url('../media/circle.svg'), pointer;
+
+}
+
+
+section{
+  height: 100vh;
+  top: 0;
+  overflow: hidden;
+}
+
+#two {
+  background: linear-gradient(-45deg, #3f51b1 0%, #5a55ae 13%, #7b5fac 25%, #8f6aae 38%, #a86aa4 50%, #cc6b8e 62%, #f18271 75%, #f3a469 87%, #f7c978 100%);
+  background-size:  400% 400%;
+  animation: gradient 20s ease infinite;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.overide{
+  overflow-x: unset !important;
+  margin-left: -5.5rem;
+}
+
+
+@keyframes gradient {
+  0% {
+    background-position: 0%;
+  }
+  50% {
+    background-position: 100%;
+  }
+  100% {
+    background-position: 0%;
+  }
+}
+
+.logo {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: rotate(225deg);
+  padding-bottom: 2rem;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
+  
+}
+
+.scroll-down {
+  bottom:auto;
+  top:6vh;
+  position:relative;
+}
+
+video{
+  height: 100vh;
+  width: 100%;
+}
+
+@layer base {
+  @property --color-a {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+  @property --color-b {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+  @property --color-c {
+    syntax: "<color>";
+    inherits: true;
+    initial-value: transparent;
+  }
+}
+
+@layer components {
+  .range {
+    appearance: none;
+    width: 100%;
+    background: white;
+    height: 2px;
+  }
+  .range::-webkit-slider-thumb {
+    appearance: none;
+    background: var(--color-b);
+    border: 2px solid white;
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    cursor: pointer;
+  }
+  .range::-moz-range-thumb {
+    appearance: none;
+    background: var(--color-b);
+    border: 2px solid white;
+    width: 36px;
+    height: 36px;
+    border-radius: 36px;
+    cursor: pointer;
+  }
+}
+
+@font-face {
+  font-family: OstrichSansInline-Regular ;
+  src: url("OstrichSansInline-Regular.otf");
+}
+
+@font-face {
+  font-family: OstrichSansInline-Italic ;
+  src: url("OstrichSans-Bold.otf");
+}
+
+@-webkit-keyframes hue {
+  from {
+	-webkit-filter: hue-rotate(0deg);
+  }
+  to {
+	-webkit-filter: hue-rotate(-360deg);
+  }
+}
+
+@keyframes hue {
+  from {
+	filter: hue-rotate(0deg);
+  }
+  to {
+	filter: hue-rotate(-360deg);
+  }
+}
+
+@keyframes gradient2 {
+  0% {
+      background-position: 0% 0%;
+  }
+  50% {
+      background-position: 100% 100%;
+  }
+  100% {
+      background-position: 0% 0%;
+  }
+}
+
+  @-webkit-keyframes border {
+       from {width: 0px;}
+       to {width:100%}
+  }
+  .ostrich{
+    font-family: OstrichSansInline-Italic;
+  }
+  #sec:after {
+    background: rgb(255, 255, 255);  
+    -webkit-animation-name: border; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    -webkit-animation-fill-mode: forwards; /* Safari 4.0 - 8.0 */
+    animation-name: border;
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-fill-mode: forwards;
+  }
+
+  .glass{
+    background: rgba( 255, 255, 255, 0.2 );
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur( 8px );
+    -webkit-backdrop-filter: blur( 8px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+
+.high{
+  top: 40%;
+}
+
+.colors{
+  background: linear-gradient(#ee6452, #5d13dd);
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.button {
+  --color: #00A97F;
+  padding: 0.8em 1.7em;
+  background-color: transparent;
+  border-radius: .3em;
+  position: relative;
+  overflow: hidden;
+  font-weight: 400;
+  font-size: 17px;
+  border: 1px solid;
+  font-family: OstrichSansInline-Italic;
+  text-transform: uppercase;
+  color: var(--color);
+  transition: 1s ease;
+  z-index: 1;
+ }
+ 
+ .button::before, .button::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+  background-color: var(--color);
+  transition: 1s ease;
+ }
+ 
+ .button::before {
+  top: -1em;
+  left: -1em;
+ }
+ 
+ .button::after {
+  left: calc(100% + 1em);
+  top: calc(100% + 1em);
+ }
+ 
+ .button:hover::before, .button:hover::after {
+  height: 410px;
+  width: 410px;
+ }
+
+ .header {
+	font-weight: 600;
+	letter-spacing: 2px;
+	background-image: -webkit-linear-gradient(92deg, #f35626, #feab3a);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	-webkit-animation: hue 10s infinite linear;
+    font-family: OstrichSansInline-Italic; 
+    transition: 1s ease;                                               
+}
+#wrap button {
+  font-size: 1.75rem !important;
+}
+ .button:hover {
+  color: rgb(255, 255, 255) !important;
+  transition: 1s ease;
+  -webkit-text-fill-color: unset;
+
+ }
+ 
+ .left{
+  left: 85%;
+  stroke:white;
+  stroke-opacity: 1;
+  transition: all 1.4s;
+ }
+
+ #arr{
+  transition: all 1.4s;
+ }
+
+ .right{
+  right: 85%;
+  stroke:white;
+  stroke-opacity: 1;
+  transition: all 1.4s;
+ }
+
+ .button:active {
+  filter: brightness(.8);
+ }
+ 
+ a {
+  /* global for all links */
+  text-decoration: none;
+}
+
+  #abstract {
+    --a: 8deg; /* control the angle of rotation (the smaller, the better) */
+    width: 350px;
+    aspect-ratio: 1;
+    border-radius: 20px;
+    transform: perspective(400px) rotate3d(var(--r,1,-1),0,calc(var(--i,1)*var(--a)));
+
+    transition: .4s;
+    cursor: url('../media/circle.svg'), pointer;
+  }
+  .alt {
+    --r: 1,1;
+    -webkit-mask: 
+      linear-gradient(45deg,#000c 40%,#000,#000c 60%)
+      0 100%/250% 250%;
+  }
+  #abstract:hover {
+    --i: -1;
+    -webkit-mask-position: 0 0;
+  }
+  .alt:hover {
+    -webkit-mask-position: 100% 0;
+  }
+  :root {
+    --hdr-gradient: radial-gradient(
+      farthest-corner circle at 99% 4% in oklab,
+      oklch(0% 0.40 222) 0%, oklch(35% 0.31 313) 100%
+    );
+    --sdr-gradient: radial-gradient(
+      farthest-corner circle at 99% 4%,
+      #000054 0%, #6e00a7 100%
+    );
+  
+  }
+  .loading-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: var(--hdr-gradient);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    color: #8015c7;
+  }
+
+  @media only screen and (max-width: 860px) {
+    .size{
+      font-size: 3rem !important;
+    }
+  
+    .left{
+      left: 80% !important;
+      width: 75px;
+      height: 75px;
+  
+    }
+  
+    .right{
+      right: 80% !important;
+      width: 75px;
+      height: 75px;
+    }
+    .sizesm{
+      font-size: 1rem;
+    }
+    .linesm{
+      line-height: 1rem;
+    }
+  
+    .high{
+      top: 80% !important;
+    }
+  
+    div h2 button div span{
+      font-size: 1.75rem !important;
+      padding: 0.25rem !important;
+    }
+    .text-foreground{ font-size: 1.75rem !important;}
+
+  }
+
+  @media only screen and (max-width: 960px){
+    .brand{
+      width: 100% !important;
+      height: auto !important;
+    }
+
+    .cardsize{
+      font-size: 1rem;
+    }
+
+    .titlecard{
+      font-size: 1.75rem;
+    }
+
+    .cardp{
+      padding: 1.5rem !important;
+    }
+
+  }
+
+  @media only screen and (max-width: 570px) {
+    .triangle{
+      width: 160px !important;
+      height: 160px !important;
+    }
+
+    .cardpos{
+      top:-10%;
+      width: 100%;
+      margin-left: 0rem ;
+      margin-right: 0rem;
+    }
+
+    .main{
+      margin-bottom: -5rem;
+    }
+
+    .cardsize{
+      font-size: 0.75rem;
+      line-height: 1rem;
+    }
+  
+    .padb{padding-bottom: 1rem;}
+
+    .titlecard{
+      font-size: 1rem;
+    }
+
+    .marg{
+      margin: 0.5rem;
+    }
+
+    .hi{
+      top:40%;
+    }
+  }
