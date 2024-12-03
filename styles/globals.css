@@ -127,7 +127,7 @@ a {
   padding: 10px 20px;
   text-transform: uppercase;
   border-radius: 8px;
-  fontsize: 17px;
+  font-size: 17px;
   font-weight: 500;
   color: #ffffff80;
   text-shadow: none;
@@ -149,7 +149,7 @@ div h2 button div span {
 }
 
 .text-foreground {
-  fontsize: 3.75rem !important;
+  font-size: 3.75rem !important;
 }
 
 .unset {
@@ -232,7 +232,7 @@ div h2 button div span {
   border-radius: 10px;
   pointer-events: none;
   transition: all 0.3s;
-  fontsize: 0px;
+  font-size: 0px;
   cursor: url("../media/circle.svg"), pointer;
 }
 .github .BG {
@@ -246,7 +246,7 @@ div h2 button div span {
 .Btn:hover .BG {
   transform: scale(1.5);
   /* transform-origin: bottom; */
-  fontsize: 20px;
+  font-size: 20px;
   color: white;
   cursor: url("../media/circle.svg"), pointer;
 }
@@ -456,7 +456,7 @@ video {
   position: relative;
   overflow: hidden;
   font-weight: 400;
-  fontsize: 17px;
+  font-size: 17px;
   border: 1px solid;
   font-family: OstrichSansInline-Italic;
   text-transform: uppercase;
@@ -506,7 +506,7 @@ video {
   transition: 1s ease;
 }
 #wrap button {
-  fontsize: 1.75rem !important;
+  font-size: 1.75rem !important;
 }
 .button:hover {
   color: rgb(255, 255, 255) !important;
@@ -593,7 +593,7 @@ a {
 
 @media only screen and (max-width: 860px) {
   .size {
-    fontsize: 3rem !important;
+    font-size: 3rem !important;
   }
 
   .left {
@@ -608,7 +608,7 @@ a {
     height: 75px;
   }
   .sizesm {
-    fontsize: 1rem;
+    font-size: 1rem;
   }
   .linesm {
     line-height: 1rem;
@@ -619,11 +619,11 @@ a {
   }
 
   div h2 button div span {
-    fontsize: 1.75rem !important;
+    font-size: 1.75rem !important;
     padding: 0.25rem !important;
   }
   .text-foreground {
-    fontsize: 1.75rem !important;
+    font-size: 1.75rem !important;
   }
 }
 
@@ -634,11 +634,11 @@ a {
   }
 
   .cardsize {
-    fontsize: 1rem;
+    font-size: 1rem;
   }
 
   .titlecard {
-    fontsize: 1.75rem;
+    font-size: 1.75rem;
   }
 
   .cardp {
@@ -664,7 +664,7 @@ a {
   }
 
   .cardsize {
-    fontsize: 0.75rem;
+    font-size: 0.75rem;
     line-height: 1rem;
   }
 
@@ -673,7 +673,7 @@ a {
   }
 
   .titlecard {
-    fontsize: 1rem;
+    font-size: 1rem;
   }
 
   .marg {
