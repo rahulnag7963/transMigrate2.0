@@ -183,18 +183,18 @@ export default function Home() {
                     x2="50%"
                     y2="100%"
                   >
-                    <stop offset="0%" stop-color="#ca3419">
+                    <stop offset="0%" stopColor="#ca3419">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#ca3419; #3f51b1; #ca3419"
                         dur="4s"
                         repeatCount="indefinite"
                       ></animate>
                     </stop>
 
-                    <stop offset="100%" stop-color="#3f51b1">
+                    <stop offset="100%" stopColor="#3f51b1">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#3f51b1; #ca3419; #3f51b1"
                         dur="4s"
                         repeatCount="indefinite"
@@ -242,18 +242,18 @@ export default function Home() {
                     x2="50%"
                     y2="100%"
                   >
-                    <stop offset="0%" stop-color="#ca3419">
+                    <stop offset="0%" stopColor="#ca3419">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#ca3419; #3f51b1; #ca3419"
                         dur="4s"
                         repeatCount="indefinite"
                       ></animate>
                     </stop>
 
-                    <stop offset="100%" stop-color="#3f51b1">
+                    <stop offset="100%" stopColor="#3f51b1">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#3f51b1; #ca3419; #3f51b1"
                         dur="4s"
                         repeatCount="indefinite"
@@ -328,18 +328,18 @@ export default function Home() {
                       x2="50%"
                       y2="100%"
                     >
-                      <stop offset="0%" stop-color="#ca3419">
+                      <stop offset="0%" stopColor="#ca3419">
                         <animate
-                          attributeName="stop-color"
+                          attributeName="stopColor"
                           values="#ca3419; #3f51b1; #ca3419"
                           dur="4s"
                           repeatCount="indefinite"
                         ></animate>
                       </stop>
 
-                      <stop offset="100%" stop-color="#3f51b1">
+                      <stop offset="100%" stopColor="#3f51b1">
                         <animate
-                          attributeName="stop-color"
+                          attributeName="stopColor"
                           values="#3f51b1; #ca3419; #3f51b1"
                           dur="4s"
                           repeatCount="indefinite"
@@ -387,18 +387,18 @@ export default function Home() {
                       x2="50%"
                       y2="100%"
                     >
-                      <stop offset="0%" stop-color="#ca3419">
+                      <stop offset="0%" stopColor="#ca3419">
                         <animate
-                          attributeName="stop-color"
+                          attributeName="stopColor"
                           values="#ca3419; #3f51b1; #ca3419"
                           dur="4s"
                           repeatCount="indefinite"
                         ></animate>
                       </stop>
 
-                      <stop offset="100%" stop-color="#3f51b1">
+                      <stop offset="100%" stopColor="#3f51b1">
                         <animate
-                          attributeName="stop-color"
+                          attributeName="stopColor"
                           values="#3f51b1; #ca3419; #3f51b1"
                           dur="4s"
                           repeatCount="indefinite"
@@ -748,18 +748,18 @@ export default function Home() {
                     x2="50%"
                     y2="100%"
                   >
-                    <stop offset="0%" stop-color="#ca3419">
+                    <stop offset="0%" stopColor="#ca3419">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#ca3419; #3f51b1; #ca3419"
                         dur="4s"
                         repeatCount="indefinite"
                       ></animate>
                     </stop>
 
-                    <stop offset="100%" stop-color="#3f51b1">
+                    <stop offset="100%" stopColor="#3f51b1">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#3f51b1; #ca3419; #3f51b1"
                         dur="4s"
                         repeatCount="indefinite"
@@ -807,18 +807,18 @@ export default function Home() {
                     x2="50%"
                     y2="100%"
                   >
-                    <stop offset="0%" stop-color="#ca3419">
+                    <stop offset="0%" stopColor="#ca3419">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#ca3419; #3f51b1; #ca3419"
                         dur="4s"
                         repeatCount="indefinite"
                       ></animate>
                     </stop>
 
-                    <stop offset="100%" stop-color="#3f51b1">
+                    <stop offset="100%" stopColor="#3f51b1">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#3f51b1; #ca3419; #3f51b1"
                         dur="4s"
                         repeatCount="indefinite"
@@ -851,7 +851,7 @@ export default function Home() {
                   height="32vh"
                   className="triangle"
                 >
-                  <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                  <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                   <g
                     id="SVGRepo_tracerCarrier"
                     stroke-linecap="round"
@@ -868,18 +868,18 @@ export default function Home() {
                         x2="50%"
                         y2="100%"
                       >
-                        <stop offset="0%" stop-color="#ca3419">
+                        <stop offset="0%" stopColor="#ca3419">
                           <animate
-                            attributeName="stop-color"
+                            attributeName="stopColor"
                             values="#ca3419; #3f51b1; #ca3419"
                             dur="4s"
                             repeatCount="indefinite"
                           ></animate>
                         </stop>
 
-                        <stop offset="100%" stop-color="#3f51b1">
+                        <stop offset="100%" stopColor="#3f51b1">
                           <animate
-                            attributeName="stop-color"
+                            attributeName="stopColor"
                             values="#3f51b1; #ca3419; #3f51b1"
                             dur="4s"
                             repeatCount="indefinite"
@@ -887,12 +887,12 @@ export default function Home() {
                         </stop>
                       </linearGradient>
                     </defs>{" "}
-                    <g id="Page-1" stroke-width="0.212" fill-rule="evenodd">
+                    <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
                       {" "}
                       <path
                         d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
                         id="Triangle-up"
-                        stroke-width="0.212"
+                        strokeWidth="0.212"
                         fill="url('#logo-gradient1')"
                         onMouseEnter={() => setHover(true)}
                         onMouseLeave={() => setHover(false)}
@@ -903,13 +903,13 @@ export default function Home() {
                       <text
                         x="50%"
                         y="55%"
-                        dominant-baseline="middle"
-                        text-anchor="middle"
-                        font-size="4px"
+                        dominantBaseline="middle"
+                        textAnchor="middle"
+                        fontSize="4px"
                         className="ostrich font-light tracking-widest styledText"
                         stroke="white"
                         fill="#044B94"
-                        fill-opacity="0.4"
+                        fillOpacity="0.4"
                       >
                         Burgundy Diamond Mines
                       </text>
@@ -928,7 +928,7 @@ export default function Home() {
                     height="32vh"
                     className="triangle"
                   >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g
                       id="SVGRepo_tracerCarrier"
                       stroke-linecap="round"
@@ -946,18 +946,18 @@ export default function Home() {
                           x2="50%"
                           y2="100%"
                         >
-                          <stop offset="0%" stop-color="#576ffa">
+                          <stop offset="0%" stopColor="#576ffa">
                             <animate
-                              attributeName="stop-color"
+                              attributeName="stopColor"
                               values="#576ffa; #fc2003; #576ffa"
                               dur="4s"
                               repeatCount="indefinite"
                             ></animate>
                           </stop>
 
-                          <stop offset="100%" stop-color="#fc2003">
+                          <stop offset="100%" stopColor="#fc2003">
                             <animate
-                              attributeName="stop-color"
+                              attributeName="stopColor"
                               values="#fc2003; #576ffa; #fc2003"
                               dur="4s"
                               repeatCount="indefinite"
@@ -968,12 +968,12 @@ export default function Home() {
                           </stop>
                         </linearGradient>
                       </defs>{" "}
-                      <g id="Page-1" stroke-width="0.212" fill-rule="evenodd">
+                      <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
                         {" "}
                         <path
                           d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
                           id="Triangle-up"
-                          stroke-width="0.212"
+                          strokeWidth="0.212"
                           fill="url('#logo-gradient2')"
                           onMouseEnter={() => setHover2(true)}
                           onMouseLeave={() => setHover2(false)}
@@ -984,13 +984,13 @@ export default function Home() {
                         <text
                           x="50%"
                           y="55%"
-                          dominant-baseline="middle"
-                          text-anchor="middle"
-                          font-size="4px"
+                          dominantBaseline="middle"
+                          textAnchor="middle"
+                          fontSize="4px"
                           className="ostrich font-light tracking-widest"
                           stroke="white"
                           fill="#044B94"
-                          fill-opacity="0.4"
+                          fillOpacity="0.4"
                         >
                           Global Relay
                         </text>
@@ -1008,7 +1008,7 @@ export default function Home() {
                     height="32vh"
                     className="triangle"
                   >
-                    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g
                       id="SVGRepo_tracerCarrier"
                       stroke-linecap="round"
@@ -1026,18 +1026,18 @@ export default function Home() {
                           x2="50%"
                           y2="100%"
                         >
-                          <stop offset="0%" stop-color="#8c4ff5">
+                          <stop offset="0%" stopColor="#8c4ff5">
                             <animate
-                              attributeName="stop-color"
+                              attributeName="stopColor"
                               values="#8c4ff5; #ee6452; #8c4ff5"
                               dur="4s"
                               repeatCount="indefinite"
                             ></animate>
                           </stop>
 
-                          <stop offset="100%" stop-color="#ee6452">
+                          <stop offset="100%" stopColor="#ee6452">
                             <animate
-                              attributeName="stop-color"
+                              attributeName="stopColor"
                               values="#ee6452; #8c4ff5; #ee6452"
                               dur="4s"
                               repeatCount="indefinite"
@@ -1045,12 +1045,12 @@ export default function Home() {
                           </stop>
                         </linearGradient>
                       </defs>{" "}
-                      <g id="Page-1" stroke-width="0.212" fill-rule="evenodd">
+                      <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
                         {" "}
                         <path
                           d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
                           id="Triangle-up"
-                          stroke-width="0.212"
+                          strokeWidth="0.212"
                           fill="url('#logo-gradient3')"
                           onMouseEnter={() => setHover3(true)}
                           onMouseLeave={() => setHover3(false)}
@@ -1061,13 +1061,13 @@ export default function Home() {
                         <text
                           x="50%"
                           y="55%"
-                          dominant-baseline="middle"
-                          text-anchor="middle"
-                          font-size="4px"
+                          dominantBaseline="middle"
+                          textAnchor="middle"
+                          fontSize="4px"
                           className="ostrich font-light tracking-widest"
                           stroke="white"
                           fill="#044B94"
-                          fill-opacity="0.4"
+                          fillOpacity="0.4"
                         >
                           Ocean Networks
                         </text>
@@ -1114,18 +1114,18 @@ export default function Home() {
                     x2="50%"
                     y2="100%"
                   >
-                    <stop offset="0%" stop-color="#ca3419">
+                    <stop offset="0%" stopColor="#ca3419">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#ca3419; #3f51b1; #ca3419"
                         dur="4s"
                         repeatCount="indefinite"
                       ></animate>
                     </stop>
 
-                    <stop offset="100%" stop-color="#3f51b1">
+                    <stop offset="100%" stopColor="#3f51b1">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#3f51b1; #ca3419; #3f51b1"
                         dur="4s"
                         repeatCount="indefinite"
@@ -1173,18 +1173,18 @@ export default function Home() {
                     x2="50%"
                     y2="100%"
                   >
-                    <stop offset="0%" stop-color="#ca3419">
+                    <stop offset="0%" stopColor="#ca3419">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#ca3419; #3f51b1; #ca3419"
                         dur="4s"
                         repeatCount="indefinite"
                       ></animate>
                     </stop>
 
-                    <stop offset="100%" stop-color="#3f51b1">
+                    <stop offset="100%" stopColor="#3f51b1">
                       <animate
-                        attributeName="stop-color"
+                        attributeName="stopColor"
                         values="#3f51b1; #ca3419; #3f51b1"
                         dur="4s"
                         repeatCount="indefinite"
@@ -1224,9 +1224,9 @@ export default function Home() {
                     x2="100%"
                     y2="0%"
                   >
-                    <stop offset="0%" stop-color="#e72e16" />
-                    <stop offset="50%" stop-color="#7687e6" />
-                    <stop offset="100%" stop-color="#0c1554" />
+                    <stop offset="0%" stopColor="#e72e16" />
+                    <stop offset="50%" stopColor="#7687e6" />
+                    <stop offset="100%" stopColor="#0c1554" />
                   </linearGradient>
                   <linearGradient
                     id="gradient2"
@@ -1235,9 +1235,9 @@ export default function Home() {
                     x2="100%"
                     y2="0%"
                   >
-                    <stop offset="0%" stop-color="#0c1554" />
-                    <stop offset="50%" stop-color="#7687e6" />
-                    <stop offset="100%" stop-color="#e72e16" />
+                    <stop offset="0%" stopColor="#0c1554" />
+                    <stop offset="50%" stopColor="#7687e6" />
+                    <stop offset="100%" stopColor="#e72e16" />
                   </linearGradient>
                   <path id="r1" stroke="url(#gradient1)">
                     <animate
@@ -1248,7 +1248,7 @@ export default function Home() {
                       repeatCount="indefinite"
                     />
                     <animate
-                      attributeName="stroke-width"
+                      attributeName="strokeWidth"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
@@ -1264,7 +1264,7 @@ export default function Home() {
                       begin="p1.begin+1s"
                     />
                     <animate
-                      attributeName="stroke-width"
+                      attributeName="strokeWidth"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
@@ -1280,7 +1280,7 @@ export default function Home() {
                       begin="p1.begin+2s"
                     />
                     <animate
-                      attributeName="stroke-width"
+                      attributeName="strokeWidth"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
@@ -1297,7 +1297,7 @@ export default function Home() {
                       begin="p1.begin+3s"
                     />
                     <animate
-                      attributeName="stroke-width"
+                      attributeName="strokeWidth"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
@@ -1313,7 +1313,7 @@ export default function Home() {
                       begin="p1.begin+4s"
                     />
                     <animate
-                      attributeName="stroke-width"
+                      attributeName="strokeWidth"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
@@ -1329,7 +1329,7 @@ export default function Home() {
                       begin="p1.begin+5s"
                     />
                     <animate
-                      attributeName="stroke-width"
+                      attributeName="strokeWidth"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
@@ -1408,8 +1408,8 @@ export default function Home() {
         >
           <defs>
             <linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="0%">
-              <stop offset="0%" stop-color="#8015c7" />
-              <stop offset="100%" stop-color="#c4143e" />
+              <stop offset="0%" stopColor="#8015c7" />
+              <stop offset="100%" stopColor="#c4143e" />
             </linearGradient>
             <filter id="inset-shadow">
               <feOffset dx="0" dy="0" />
@@ -1420,7 +1420,7 @@ export default function Home() {
                 in2="offset-blur"
                 result="inverse"
               />
-              <feFlood flood-color="black" flood-opacity=".95" result="color" />
+              <feFlood floodColor="black" floodOpacity=".95" result="color" />
               <feComposite
                 operator="in"
                 in="color"
@@ -1433,9 +1433,9 @@ export default function Home() {
           <g
             id="Page-1"
             stroke="none"
-            stroke-width="1"
+            strokeWidth="1"
             fill="none"
-            fill-rule="evenodd"
+            fillRule="evenodd"
           >
             <g
               id="Dribbble-Light-Preview"

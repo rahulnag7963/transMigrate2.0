@@ -19,8 +19,8 @@ export const Logo: React.FC<IconSvgProps> = ({
   >
     <defs>
       <linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="0%">
-        <stop offset="0%" stop-color="#8015c7" />
-        <stop offset="100%" stop-color="#c4143e" />
+        <stop offset="0%" stopColor="#8015c7" />
+        <stop offset="100%" stopColor="#c4143e" />
       </linearGradient>
       <filter id="inset-shadow">
         <feOffset dx="0" dy="0" />
@@ -31,18 +31,12 @@ export const Logo: React.FC<IconSvgProps> = ({
           in2="offset-blur"
           result="inverse"
         />
-        <feFlood flood-color="black" flood-opacity=".95" result="color" />
+        <feFlood floodColor="black" floodOpacity=".95" result="color" />
         <feComposite operator="in" in="color" in2="inverse" result="shadow" />
         <feComposite operator="over" in="shadow" in2="SourceGraphic" />
       </filter>
     </defs>
-    <g
-      id="Page-1"
-      stroke="none"
-      stroke-width="1"
-      fill="none"
-      fill-rule="evenodd"
-    >
+    <g id="Page-1" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
       <g
         id="Dribbble-Light-Preview"
         transform="translate(-421.000000, -8039.000000)"
@@ -256,16 +250,16 @@ export const Logo2: React.FC<IconSvgProps> = (props) => {
     >
       <defs>
         <linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="0%">
-          <stop offset="0%" stop-color="#8015c7" />
-          <stop offset="100%" stop-color="#c4143e" />
+          <stop offset="0%" stopColor="#8015c7" />
+          <stop offset="100%" stopColor="#c4143e" />
         </linearGradient>
       </defs>
       <g
         id="Page-1"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g
           id="Dribbble-Light-Preview"
@@ -299,8 +293,8 @@ export const NextUILogo: React.FC<IconSvgProps> = (props) => {
     >
       <defs>
         <linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="0%">
-          <stop offset="0%" stop-color="#8015c7" />
-          <stop offset="100%" stop-color="#c4143e" />
+          <stop offset="0%" stopColor="#8015c7" />
+          <stop offset="100%" stopColor="#c4143e" />
         </linearGradient>
         <filter id="inset-shadow">
           <feOffset dx="0" dy="0" />
@@ -311,7 +305,7 @@ export const NextUILogo: React.FC<IconSvgProps> = (props) => {
             in2="offset-blur"
             result="inverse"
           />
-          <feFlood flood-color="black" flood-opacity=".95" result="color" />
+          <feFlood floodColor="black" floodOpacity=".95" result="color" />
           <feComposite operator="in" in="color" in2="inverse" result="shadow" />
           <feComposite operator="over" in="shadow" in2="SourceGraphic" />
         </filter>
@@ -319,9 +313,9 @@ export const NextUILogo: React.FC<IconSvgProps> = (props) => {
       <g
         id="Page-1"
         stroke="none"
-        stroke-width="1"
+        strokeWidth="1"
         fill="none"
-        fill-rule="evenodd"
+        fillRule="evenodd"
       >
         <g
           id="Dribbble-Light-Preview"

@@ -15,16 +15,16 @@ const Header: React.FC = () => {
           >
             <defs>
               <linearGradient id="grad1" x1="0%" x2="100%" y1="0%" y2="0%">
-                <stop offset="0%" stop-color="#8015c7" />
-                <stop offset="100%" stop-color="#c4143e" />
+                <stop offset="0%" stopColor="#8015c7" />
+                <stop offset="100%" stopColor="#c4143e" />
               </linearGradient>
             </defs>
             <g
               id="Page-1"
               stroke="none"
-              stroke-width="1"
+              strokeWidth="1"
               fill="none"
-              fill-rule="evenodd"
+              fillRule="evenodd"
             >
               <g
                 id="Dribbble-Light-Preview"
