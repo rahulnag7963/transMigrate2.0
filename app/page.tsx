@@ -468,8 +468,8 @@ export default function Home() {
                         {" "}
                         1.{" "}
                       </span>{" "}
-                      Transmigrate's goal is to create unique websites optimized
-                      for seo and performance.
+                      Transmigrate&apos;s goal is to create unique websites
+                      optimized for seo and performance.
                     </div>
                   </AccordionItem>
                   <AccordionItem
@@ -854,8 +854,8 @@ export default function Home() {
                   <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                   <g
                     id="SVGRepo_tracerCarrier"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   ></g>
                   <g id="SVGRepo_iconCarrier">
                     {" "}
@@ -931,8 +931,8 @@ export default function Home() {
                     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g
                       id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></g>
                     <g id="SVGRepo_iconCarrier">
                       {" "}
@@ -1011,8 +1011,8 @@ export default function Home() {
                     <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
                     <g
                       id="SVGRepo_tracerCarrier"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                     ></g>
                     <g id="SVGRepo_iconCarrier">
                       {" "}
@@ -1211,7 +1211,7 @@ export default function Home() {
                 viewBox="0 0 320 320"
                 fill="none"
                 stroke="blue"
-                stroke-linecap="round"
+                strokeLinecap="round"
                 className="justify-self-center"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
