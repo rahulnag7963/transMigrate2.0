@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    unoptimized: true,
+  },
   output: "export",
   distDir: "out",
   basePath: "/transMigrate2.0",
