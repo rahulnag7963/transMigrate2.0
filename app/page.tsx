@@ -458,7 +458,7 @@ export default function Home() {
                   }}
                 >
                   <AccordionItem
-                    className="unset text-2xl p-0"
+                    className="unset p-0"
                     key="1"
                     aria-label="Accordion 1"
                     title="Our goals"
@@ -523,7 +523,7 @@ export default function Home() {
             <p className="text-7xl ostrich z-20 size"> Past Projects/Work: </p>
             <div className="cards z-20">
               <Card
-                className="absolute border-none inset-x-0 m-16 z-30 fade cardpos"
+                className="absolute border-none z-30 fade cardpos max-w-[64rem]"
                 style={{
                   visibility: card1 ? "visible" : "hidden",
                   opacity: card1 ? "1" : "0",
@@ -566,7 +566,7 @@ export default function Home() {
                 <CardFooter className="text-left before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
                   <Link
                     isExternal
-                    className="text-left text-tiny text-black/80"
+                    className="text-left text-tiny text-white/80"
                     href="https://canadamark1dev.wpenginepowered.com/"
                     showAnchorIcon
                   >
@@ -585,7 +585,7 @@ export default function Home() {
                 </CardFooter>
               </Card>
               <Card
-                className="absolute border-none inset-x-0 m-16 z-30 fade cardpos"
+                className="absolute border-none inset-x-0 m-16 z-30 fade cardpos max-w-[64rem]"
                 style={{
                   visibility: card2 ? "visible" : "hidden",
                   opacity: card2 ? "1" : "0",
@@ -633,7 +633,7 @@ export default function Home() {
                 <CardFooter className="text-left before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
                   <Link
                     isExternal
-                    className="text-left text-tiny text-black/80"
+                    className="text-left text-tiny text-white/80"
                     href="https://www.globalrelay.com/services/business-data-migration/?utm_source=google&utm_medium=paidsearch&utm_campaign=em-uk-en-gr-brand&utm_content=em-uk-en-gr-brand-core-ba-exact"
                     showAnchorIcon
                   >
@@ -652,7 +652,7 @@ export default function Home() {
                 </CardFooter>
               </Card>
               <Card
-                className="absolute border-none inset-x-0 m-16 z-30 fade cardpos"
+                className="absolute border-none inset-x-0 m-16 z-30 fade cardpos max-w-[64rem]"
                 style={{
                   visibility: card3 ? "visible" : "hidden",
                   opacity: card3 ? "1" : "0",
@@ -699,7 +699,7 @@ export default function Home() {
                 <CardFooter className="text-left before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
                   <Link
                     isExternal
-                    className="text-left text-tiny text-black/80"
+                    className="text-left text-tiny text-white/80"
                     href="https://www.oceannetworks.ca/"
                     showAnchorIcon
                   >
