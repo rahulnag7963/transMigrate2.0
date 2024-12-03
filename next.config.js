@@ -2,7 +2,8 @@
 const nextConfig = {
   output: "export",
   distDir: "out",
-  basePath: "/app",
+  basePath: "/transMigrate2.0",
+  assetPrefix: "/transMigrate2.0/",
   experimental: {
     turbo: {
       resolveExtensions: [".mp4"],
