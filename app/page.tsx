@@ -1,8 +1,6 @@
 "use client";
 import { Link } from "@nextui-org/link";
-import { Card, CardBody, CardFooter } from "@nextui-org/card";
-import { Image, Button } from "@nextui-org/react";
-import { GithubIcon, Logo2 } from "@/components/icons";
+import { Image } from "@nextui-org/react";
 import "@/styles/globals.css";
 import { createContext } from "react";
 import goog from "@/media/pexels-googledeepmind-18068746.jpg";
@@ -19,9 +17,11 @@ import Header from "@/components/header";
 import Relay from "../media/global.png";
 import { Pagination } from "@nextui-org/react";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import { Modal, ModalContent, ModalBody } from "@nextui-org/react";
+import { Slider } from "@nextui-org/react";
+import { set } from "lodash";
 
 export default function Home() {
-  const ref = useRef<HTMLDivElement>(null);
   const Context = createContext;
 
   const [arr1, setArr1] = useState(false);
@@ -37,12 +37,11 @@ export default function Home() {
   const [card2, showCard2] = useState(false);
   const [card3, showCard3] = useState(false);
 
-  const [section, setSection] = useState(1);
-
+  const [img, setImg] = useState(true);
+  const [step, setStep] = useState(1);
   useEffect(() => {
     if (window.innerWidth < 550) {
       setSmall(2);
-      console.log(small);
     }
     if (window.innerWidth < 860) {
       setArr1(true);
@@ -53,6 +52,10 @@ export default function Home() {
     }
     if (window.innerWidth > 860) {
       setSmall(0);
+    }
+
+    if (window.innerWidth < 965) {
+      setImg(false);
     }
   });
 
@@ -122,8 +125,26 @@ export default function Home() {
     );
   }, []);
 
+  const [section, setSection] = useState<number>();
+
+  useEffect(() => {
+    const savedSection = window.localStorage.getItem("sect");
+    if (savedSection) {
+      setSection(parseInt(savedSection));
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && section) {
+      window.localStorage.setItem("sect", section.toString());
+    }
+  }, [section]);
+
   const handlePageClick = (page: number) => {
     setSection(page);
+    if (page) {
+      window.localStorage.setItem("sect", page.toString());
+    }
     const sectionId =
       page === 1
         ? "#one"
@@ -133,18 +154,13 @@ export default function Home() {
             ? "#three"
             : "#four";
     document.querySelector(sectionId)?.scrollIntoView({ behavior: "smooth" });
-    console.log(sectionId);
   };
   return (
     <div className="h-auto z-10">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" />
       <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.halo.min.js" />
-      <section
-        className="panel top-0 flex justify-center z-10"
-        ref={ref}
-        id="one"
-      >
-        <Fade className="panel top-0 flex justify-center z-10">
+      <section className=" relative panel grid items-center z-10" id="one">
+        <Fade>
           <video
             className="absolute object-cover top-0 left-0 z-10"
             loop
@@ -153,68 +169,25 @@ export default function Home() {
           >
             <source src="/video.mp4" type="video/mp4" />
           </video>
-          <div className="inset-10 flex flex-col items-center justify-center z-20">
-            <a
-              href="#two"
-              className="tag"
-              onClick={() => {
-                setSection(2);
-              }}
-            >
-              <svg
-                fill="white"
-                height="150px"
-                width="150px"
-                version="1.1"
-                id="Layer_1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsXlink="http://www.w3.org/1999/xlink"
-                viewBox="0 0 330 330"
-                xmlSpace="preserve"
-                className="z-20 absolute left"
-                onMouseEnter={() => setArr1(true)}
-                onMouseLeave={() => setArr1(false)}
-              >
-                <defs>
-                  <linearGradient
-                    id="arrow-gradient1"
-                    x1="50%"
-                    y1="0%"
-                    x2="50%"
-                    y2="100%"
-                  >
-                    <stop offset="0%" stopColor="#ca3419">
-                      <animate
-                        attributeName="stopColor"
-                        values="#ca3419; #3f51b1; #ca3419"
-                        dur="4s"
-                        repeatCount="indefinite"
-                      ></animate>
-                    </stop>
-
-                    <stop offset="100%" stopColor="#3f51b1">
-                      <animate
-                        attributeName="stopColor"
-                        values="#3f51b1; #ca3419; #3f51b1"
-                        dur="4s"
-                        repeatCount="indefinite"
-                      ></animate>
-                    </stop>
-                  </linearGradient>
-                </defs>
-                <path
-                  id="arr"
-                  d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
-                    c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
-                    C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
-                    C255,161.018,253.42,157.202,250.606,154.389z"
-                  fill="url(#arrow-gradient1)"
-                  fillOpacity={arr1 ? 1 : 0}
-                />
-              </svg>
-            </a>
+          <div className="grid grid-rows-2 grid-cols-1 z-10 max-w-6xl place-self-center text-center">
+            <div>
+              <div className="header">
+                <p id="sec" className="text-center z-20 text-7xl size">
+                  Taking Web Development
+                </p>
+                <p className="text-center text-7xl pb-6 size">
+                  to the next level
+                </p>
+              </div>
+              <a href="#two" id="wrap">
+                <button className="header button" onClick={() => setSection(2)}>
+                  Click for more!
+                </button>
+              </a>
+            </div>
             <a
               href="#four"
+              className="z-20 grid"
               onClick={() => {
                 setSection(4);
               }}
@@ -229,7 +202,7 @@ export default function Home() {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 330 330"
                 xmlSpace="preserve"
-                className="z-20 absolute right"
+                className="z-50 absolute right high front2"
                 transform="scale(-1,1)"
                 onMouseEnter={() => setArr2(true)}
                 onMouseLeave={() => setArr2(false)}
@@ -272,23 +245,69 @@ export default function Home() {
                 />
               </svg>
             </a>
-            <div className="header">
-              <p id="sec" className="text-center mx-auto z-20 text-7xl size">
-                Taking Web Development
-              </p>
-              <p className="text-center mx-auto text-7xl pb-6 size">
-                to the next level
-              </p>
-            </div>
-            <a href="#two" id="wrap" className="">
-              <button className="header button" onClick={() => setSection(2)}>
-                Click for more!
-              </button>
+            <a
+              href="#two"
+              className="z-20 grid"
+              onClick={() => {
+                setSection(2);
+              }}
+            >
+              <svg
+                fill="white"
+                height="150px"
+                width="150px"
+                version="1.1"
+                id="Layer_1"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlnsXlink="http://www.w3.org/1999/xlink"
+                viewBox="0 0 330 330"
+                xmlSpace="preserve"
+                className="z-50 absolute left high front1"
+                onMouseEnter={() => setArr1(true)}
+                onMouseLeave={() => setArr1(false)}
+              >
+                <defs>
+                  <linearGradient
+                    id="arrow-gradient1"
+                    x1="50%"
+                    y1="0%"
+                    x2="50%"
+                    y2="100%"
+                  >
+                    <stop offset="0%" stopColor="#ca3419">
+                      <animate
+                        attributeName="stopColor"
+                        values="#ca3419; #3f51b1; #ca3419"
+                        dur="4s"
+                        repeatCount="indefinite"
+                      ></animate>
+                    </stop>
+
+                    <stop offset="100%" stopColor="#3f51b1">
+                      <animate
+                        attributeName="stopColor"
+                        values="#3f51b1; #ca3419; #3f51b1"
+                        dur="4s"
+                        repeatCount="indefinite"
+                      ></animate>
+                    </stop>
+                  </linearGradient>
+                </defs>
+                <path
+                  id="arr"
+                  d="M250.606,154.389l-150-149.996c-5.857-5.858-15.355-5.858-21.213,0.001
+                    c-5.857,5.858-5.857,15.355,0.001,21.213l139.393,139.39L79.393,304.394c-5.857,5.858-5.857,15.355,0.001,21.213
+                    C82.322,328.536,86.161,330,90,330s7.678-1.464,10.607-4.394l149.999-150.004c2.814-2.813,4.394-6.628,4.394-10.606
+                    C255,161.018,253.42,157.202,250.606,154.389z"
+                  fill="url(#arrow-gradient1)"
+                  fillOpacity={arr1 ? 1 : 0}
+                />
+              </svg>
             </a>
           </div>
         </Fade>
       </section>
-      <section className="relative panel red grid items-center z-0" id="two">
+      <section className="relative panel grid items-center z-0" id="two">
         <Fade>
           <div className="one z-0"></div>
           <div className="two"></div>
@@ -298,7 +317,7 @@ export default function Home() {
             <p className="text-7xl z-10 text-center ostrich size">
               Simplifying and optimizing websites
             </p>
-            <div className="grid grid rows-1 grid-cols-2 p-2 z-10 m-2 max-w-6xl">
+            <div className="grid grid rows-1 grid-cols-2 p-2 z-10 m-2 max-w-6xl justify-items-center items-center">
               <a
                 href="#three"
                 className="tag"
@@ -506,9 +525,10 @@ export default function Home() {
                 </Accordion>
               </div>
               <Image
-                id="abstract"
+                id={small < 1 ? "abstract" : "p-4"}
                 isBlurred
                 width={small == 1 ? 220 : small == 2 ? 140 : 440}
+                height={small == 1 ? 220 : small == 2 ? 140 : 440}
                 src={goog.src}
                 alt="NextUI Album Cover"
                 className="alt m-8 header z-10"
@@ -520,203 +540,190 @@ export default function Home() {
       <section className="grid panel items-center z-20" id="three">
         <Fade cascade className="grid panel items-center z-20">
           <div className="text-center z-20">
-            <p className="text-7xl ostrich z-20 size"> Past Projects/Work: </p>
+            <p className="text-7xl ostrich z-20 size">
+              {" "}
+              Past Projects/Work Experience:{" "}
+            </p>
             <div className="cards z-20">
-              <Card
-                className="absolute border-none z-30 fade cardpos max-w-[64rem]"
-                style={{
-                  visibility: card1 ? "visible" : "hidden",
-                  opacity: card1 ? "1" : "0",
-                  transition: "all 0.5s linear",
-                  overflow: "hidden",
-                }}
-                isFooterBlurred
-                radius="lg"
+              <Modal
+                isOpen={card1}
+                onOpenChange={showCard1}
+                size="5xl"
+                backdrop="blur"
+                placement="center"
               >
-                <CardBody className="grid grid-cols-2 gap-8 p-0">
-                  <div>
-                    <Image
-                      alt="Burgundy Diamond mines"
-                      className="brand max-w-md"
-                      height={500}
-                      src={diamonds.src}
-                      width={500}
-                    />
-                  </div>
-                  <div className="text-left p-8 cardp">
-                    <p className="text-6xl ostrich titlecard">
-                      Burgundy Diamond Mines
-                    </p>
-                    <p className="text-xl ostrich cardsize">
-                      - This company wanted a website showcasing the process of
-                      what it takes to create thier unique diamonds (linked
-                      below)
-                    </p>
-                    <div className="text-xl ostrich cardsize padb">
-                      - Created using the following tools:
-                      <li>wordpress</li>
-                      Along side custom coded parts which were made using:
-                      <li>tailwind</li>
-                      <li>vanila javascript</li>
-                      <li>html and css</li>
-                    </div>
-                    <p className="text-xl ostrich"></p>
-                  </div>
-                </CardBody>
-                <CardFooter className="text-left before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-                  <Link
-                    isExternal
-                    className="text-left text-tiny text-white/80"
-                    href="https://canadamark1dev.wpenginepowered.com/"
-                    showAnchorIcon
-                  >
-                    Burgundy Diamond Mines
-                  </Link>
-                  <Button
-                    className="text-tiny text-white bg-black/20 ml-auto"
-                    variant="flat"
-                    color="default"
-                    radius="lg"
-                    size="sm"
-                    onClick={() => showCard1(false)}
-                  >
-                    Close
-                  </Button>
-                </CardFooter>
-              </Card>
-              <Card
-                className="absolute border-none inset-x-0 m-16 z-30 fade cardpos max-w-[64rem]"
-                style={{
-                  visibility: card2 ? "visible" : "hidden",
-                  opacity: card2 ? "1" : "0",
-                  transition: "all 0.5s linear",
-                  overflow: "hidden",
-                }}
-                isFooterBlurred
-                radius="lg"
+                <ModalContent>
+                  {(onClose) => (
+                    <>
+                      <ModalBody className="grid grid-cols-2 gap-4 p-0 justify-items-center items-center">
+                        <Image
+                          alt="Burgundy Diamond mines"
+                          className="brand max-w-md m-4"
+                          height="h-100"
+                          src={diamonds.src}
+                          width="w-100"
+                          isZoomed={img}
+                        />
+                        <div className="m-4">
+                          <p className="text-5xl ostrich titlecard pb-8">
+                            Burgundy Diamond Mines
+                          </p>
+                          <p className="text-3xl ostrich pb-4">
+                            {" "}
+                            Contract Web Developer
+                          </p>
+                          <div className="text-xl ostrich cardsize padb">
+                            <p className="text-xl ostrich cardsize pb-4">
+                              - Burgundy Diamond Mines is a diamond mining
+                              company that mines, creates and sells diamond
+                              jewelery across the globe.
+                            </p>
+                            <p className="text-xl ostrich cardsize pb-4">
+                              - This company wanted a website showcasing the
+                              process of what it takes to create thier unique
+                              diamonds (website linked below)
+                            </p>
+                            Created using the following technologies:
+                            <li>wordpress</li>
+                            Along side custom coded parts which were made using:
+                            <li>tailwind</li>
+                            <li>vanila javascript</li>
+                            <li>html and css</li>
+                          </div>
+                          <Link
+                            isExternal
+                            className="w-100 ostrich text-xl cardsize links text-white/80"
+                            href="https://canadamark1dev.wpenginepowered.com/"
+                            showAnchorIcon
+                          >
+                            Burgundy Website
+                          </Link>
+                        </div>
+                      </ModalBody>
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
+              <Modal
+                isOpen={card2}
+                onOpenChange={showCard2}
+                size="5xl"
+                backdrop="blur"
+                placement="center"
               >
-                <CardBody className="grid grid-cols-2 gap-8 p-0">
-                  <div>
-                    <Image
-                      alt="Global Relay"
-                      className="brand max-w-md"
-                      height={500}
-                      src={Relay.src}
-                      width={500}
-                    />
-                  </div>
-                  <div className="text-left p-8 cardp">
-                    <p className="text-6xl ostrich text-center titlecard">
-                      Global Relay
-                    </p>
-                    <p className="text-xl ostrich p-2 cardsize">
-                      - Global Relay is SaaS company that focuses on managing,
-                      storing and displaying large amounts of data.
-                    </p>
-                    <p className="text-xl ostrich p-2 cardsize">
-                      - My job was to help modernize their website from old JSP
-                      pages to React.
-                    </p>
-                    <p className="text-xl ostrich p-2 cardsize">
-                      - Also helped in cleaning up endpoints and documenting
-                      that work in Swagger ui
-                    </p>
-                    <div className="text-xl ostrich cardsize padb">
-                      technoloiges used:
-                      <li>java spring boot</li>
-                      <li>react (typescript, html, css)</li>
-                      <li>swagger ui</li>
-                      <li className="invisible"></li>
-                    </div>
-                  </div>
-                </CardBody>
-                <CardFooter className="text-left before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-                  <Link
-                    isExternal
-                    className="text-left text-tiny text-white/80"
-                    href="https://www.globalrelay.com/services/business-data-migration/?utm_source=google&utm_medium=paidsearch&utm_campaign=em-uk-en-gr-brand&utm_content=em-uk-en-gr-brand-core-ba-exact"
-                    showAnchorIcon
-                  >
-                    Global Relay
-                  </Link>
-                  <Button
-                    className="text-tiny text-white bg-black/20 ml-auto"
-                    variant="flat"
-                    color="default"
-                    radius="lg"
-                    size="sm"
-                    onClick={() => showCard2(false)}
-                  >
-                    Close
-                  </Button>
-                </CardFooter>
-              </Card>
-              <Card
-                className="absolute border-none inset-x-0 m-16 z-30 fade cardpos max-w-[64rem]"
-                style={{
-                  visibility: card3 ? "visible" : "hidden",
-                  opacity: card3 ? "1" : "0",
-                  transition: "all 0.5s linear",
-                  overflow: "hidden",
-                }}
-                isFooterBlurred
-                radius="lg"
+                <ModalContent>
+                  {(onClose) => (
+                    <>
+                      <ModalBody className="grid grid-cols-2 gap-4 p-0 justify-items-center items-center">
+                        <Image
+                          alt="Burgundy Diamond mines"
+                          className="brand max-w-md m-4"
+                          height="h-100"
+                          src={Relay.src}
+                          width="w-100"
+                          isZoomed={img}
+                        />
+                        <div className="m-4">
+                          <p className="text-5xl ostrich titlecard pb-8">
+                            Global Relay
+                          </p>
+                          <p className="text-3xl ostrich pb-4">
+                            {" "}
+                            Software Developer Intern
+                          </p>
+                          <div className="text-xl ostrich cardsize padb">
+                            <p className="text-xl ostrich cardsize pb-4">
+                              - Global Relay is SaaS company that focuses on
+                              managing, storing and displaying large amounts of
+                              data.
+                            </p>
+                            <p className="text-xl ostrich cardsize pb-4">
+                              - My job was to help modernize their website from
+                              old JSP pages to React.
+                            </p>
+                            <p className="text-xl ostrich pb-4 cardsize">
+                              - Also helped in cleaning up, testing and updating
+                              endpoints and documenting that work in Swagger ui
+                            </p>
+                            Created using the following technologies:
+                            <li>java spring boot</li>
+                            <li>react (typescript, html, css)</li>
+                            <li>swagger ui</li>
+                          </div>
+                          <Link
+                            isExternal
+                            className="w-100 ostrich text-xl cardsize links text-white/80"
+                            href="https://www.globalrelay.com/services/business-data-migration/?utm_source=google&utm_medium=paidsearch&utm_campaign=em-uk-en-gr-brand&utm_content=em-uk-en-gr-brand-core-ba-exact"
+                            showAnchorIcon
+                          >
+                            Global Relay Website
+                          </Link>
+                        </div>
+                      </ModalBody>
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
+              <Modal
+                isOpen={card3}
+                onOpenChange={showCard3}
+                size="5xl"
+                backdrop="blur"
+                placement="center"
               >
-                <CardBody className="grid grid-cols-2 gap-8 p-0">
-                  <div>
-                    <Image
-                      alt="Ocean Networks"
-                      className="brand max-w-md"
-                      height={500}
-                      src={ONC.src}
-                      width={500}
-                    />
-                  </div>
-                  <div className="text-left pl-8 pt-8 pr-4 cardp">
-                    <p className="text-6xl ostrich titlecard">Ocean Networks</p>
-                    <p className="text-xl ostrich p-2 cardsize">
-                      - Is a non-profit organization whose goal is to map out
-                      the ocean and inform government decisions based on those
-                      results.
-                    </p>
-                    <p className="text-xl ostrich p-2 cardsize">
-                      - During my time there, I created numerous tests to help
-                      imporve development speeds.
-                    </p>
-                    <p className="text-xl ostrich p-2 cardsize">
-                      - Also helped updating website components based on client
-                      needs.
-                    </p>
-                    <div className="text-xl ostrich cardsize padb">
-                      technoloiges used:
-                      <li>Cypress.io</li>
-                      <li>react (typescript, html, css)</li>
-                      <li>Selenium (java) </li>
-                      <li className="invisible"></li>
-                    </div>
-                  </div>
-                </CardBody>
-                <CardFooter className="text-left before:bg-white/10 border-white/20 border-1 overflow-hidden py-1 absolute before:rounded-xl rounded-large bottom-1 w-[calc(100%_-_8px)] shadow-small ml-1 z-10">
-                  <Link
-                    isExternal
-                    className="text-left text-tiny text-white/80"
-                    href="https://www.oceannetworks.ca/"
-                    showAnchorIcon
-                  >
-                    Ocean Networks Canada
-                  </Link>
-                  <Button
-                    className="text-tiny text-white bg-black/20 ml-auto"
-                    variant="flat"
-                    color="default"
-                    radius="lg"
-                    size="sm"
-                    onClick={() => showCard3(false)}
-                  >
-                    Close
-                  </Button>
-                </CardFooter>
-              </Card>
+                <ModalContent>
+                  {(onClose) => (
+                    <>
+                      <ModalBody className="grid grid-cols-2 gap-4 p-0 justify-items-center items-center">
+                        <Image
+                          alt="Burgundy Diamond mines"
+                          className="brand max-w-md m-4"
+                          height="h-100"
+                          src={ONC.src}
+                          width="w-100"
+                          isZoomed={img}
+                        />
+                        <div className="m-4">
+                          <p className="text-5xl ostrich titlecard pb-8">
+                            Ocean Networks Canada
+                          </p>
+                          <p className="text-3xl ostrich pb-4">
+                            {" "}
+                            Software Developer Intern
+                          </p>
+                          <div className="text-xl ostrich cardsize padb">
+                            <p className="text-xl ostrich cardsize pb-4">
+                              - Ocean Networks a non-profit organization whose
+                              goal is to map out the ocean and inform government
+                              decisions based on those results.
+                            </p>
+                            <p className="text-xl ostrich cardsize pb-4">
+                              - During my time there, I created numerous tests
+                              to help imporve development speeds.
+                            </p>
+                            <p className="text-xl ostrich pb-4 cardsize">
+                              - Also helped updating website components based on
+                              client needs.
+                            </p>
+                            Technoloiges used:
+                            <li>Cypress.io</li>
+                            <li>react (typescript, html, css)</li>
+                            <li>Selenium (java) </li>
+                          </div>
+                          <Link
+                            isExternal
+                            className="w-100 ostrich text-xl cardsize text-left text-white/80 links"
+                            href="https://www.oceannetworks.ca/"
+                            showAnchorIcon
+                          >
+                            Ocean Networks Website
+                          </Link>
+                        </div>
+                      </ModalBody>
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
             </div>
             <a
               href="#four"
@@ -735,8 +742,7 @@ export default function Home() {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 330 330"
                 xmlSpace="preserve"
-                className="z-20 absolute left
-                top-1/3"
+                className="z-20 absolute left high"
                 onMouseEnter={() => setArr1(true)}
                 onMouseLeave={() => setArr1(false)}
               >
@@ -794,7 +800,7 @@ export default function Home() {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 330 330"
                 xmlSpace="preserve"
-                className="z-20 absolute right top-1/3"
+                className="z-20 absolute right high"
                 transform="scale(-1,1)"
                 onMouseEnter={() => setArr2(true)}
                 onMouseLeave={() => setArr2(false)}
@@ -837,246 +843,553 @@ export default function Home() {
                 />
               </svg>
             </a>
-            <div className="grid grid-cols-1 grid-rows-2 max-w-6xl justify-self-center z-20">
-              <button
-                className="justify-self-center main"
-                onClick={() => showCard1(true)}
-              >
-                <svg
-                  viewBox="0 0 64.00 64.00"
-                  version="1.1"
-                  xmlns="http://www.w3.org/2000/svg"
-                  xmlnsXlink="http://www.w3.org/1999/xlink"
-                  width="32vh"
-                  height="32vh"
-                  className="triangle"
-                >
-                  <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                  <g
-                    id="SVGRepo_tracerCarrier"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  ></g>
-                  <g id="SVGRepo_iconCarrier">
-                    {" "}
-                    <title>Triangle-up</title> <desc>Created with Sketch.</desc>{" "}
-                    <defs>
-                      <linearGradient
-                        id="logo-gradient1"
-                        x1="50%"
-                        y1="0%"
-                        x2="50%"
-                        y2="100%"
-                      >
-                        <stop offset="0%" stopColor="#ca3419">
-                          <animate
-                            attributeName="stopColor"
-                            values="#ca3419; #3f51b1; #ca3419"
-                            dur="4s"
-                            repeatCount="indefinite"
-                          ></animate>
-                        </stop>
-
-                        <stop offset="100%" stopColor="#3f51b1">
-                          <animate
-                            attributeName="stopColor"
-                            values="#3f51b1; #ca3419; #3f51b1"
-                            dur="4s"
-                            repeatCount="indefinite"
-                          ></animate>
-                        </stop>
-                      </linearGradient>
-                    </defs>{" "}
-                    <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
-                      {" "}
-                      <path
-                        d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
-                        id="Triangle-up"
-                        strokeWidth="0.212"
-                        fill="url('#logo-gradient1')"
-                        onMouseEnter={() => setHover(true)}
-                        onMouseLeave={() => setHover(false)}
-                        style={{ fillOpacity: hover ? 1 : 0 }}
-                      >
-                        {" "}
-                      </path>{" "}
-                      <text
-                        x="50%"
-                        y="55%"
-                        dominantBaseline="middle"
-                        textAnchor="middle"
-                        fontSize="4px"
-                        className="ostrich font-light tracking-widest styledText"
-                        stroke="white"
-                        fill="#044B94"
-                        fillOpacity="0.4"
-                      >
-                        Burgundy Diamond Mines
-                      </text>
-                    </g>{" "}
-                  </g>
-                </svg>
-              </button>
-              <div>
-                <button className="pr-2" onClick={() => showCard2(true)}>
-                  <svg
-                    viewBox="0 0 64.00 64.00"
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    width="32vh"
-                    height="32vh"
-                    className="triangle"
+            {step <= 1.5 && (
+              <Fade duration={1500}>
+                <div className="grid grid-cols-1 grid-rows-2 max-w-6xl justify-self-center z-20">
+                  <button
+                    className="justify-self-center main"
+                    onClick={() => showCard1(true)}
                   >
-                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    ></g>
-                    <g id="SVGRepo_iconCarrier">
-                      {" "}
-                      <title>Triangle-up</title>{" "}
-                      <desc>Created with Sketch.</desc>
-                      <defs>
-                        <linearGradient
-                          id="logo-gradient2"
-                          x1="50%"
-                          y1="0%"
-                          x2="50%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#576ffa">
-                            <animate
-                              attributeName="stopColor"
-                              values="#576ffa; #fc2003; #576ffa"
-                              dur="4s"
-                              repeatCount="indefinite"
-                            ></animate>
-                          </stop>
-
-                          <stop offset="100%" stopColor="#fc2003">
-                            <animate
-                              attributeName="stopColor"
-                              values="#fc2003; #576ffa; #fc2003"
-                              dur="4s"
-                              repeatCount="indefinite"
-                              keyTimes="0; 0.5; 1"
-                              keySplines="0.42 0 1 1; 0 0 0.58 1"
-                              calcMode="spline"
-                            ></animate>
-                          </stop>
-                        </linearGradient>
-                      </defs>{" "}
-                      <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
+                    <svg
+                      viewBox="0 0 64.00 64.00"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                      width="32vh"
+                      height="32vh"
+                      className="triangle"
+                    >
+                      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
                         {" "}
-                        <path
-                          d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
-                          id="Triangle-up"
-                          strokeWidth="0.212"
-                          fill="url('#logo-gradient2')"
-                          onMouseEnter={() => setHover2(true)}
-                          onMouseLeave={() => setHover2(false)}
-                          style={{ fillOpacity: hover2 ? 1 : 0 }}
-                        >
-                          {" "}
-                        </path>{" "}
-                        <text
-                          x="50%"
-                          y="55%"
-                          dominantBaseline="middle"
-                          textAnchor="middle"
-                          fontSize="4px"
-                          className="ostrich font-light tracking-widest"
-                          stroke="white"
-                          fill="#044B94"
-                          fillOpacity="0.4"
-                        >
-                          Global Relay
-                        </text>
-                      </g>{" "}
-                    </g>
-                  </svg>
-                </button>
-                <button className="pl-2" onClick={() => showCard3(true)}>
-                  <svg
-                    viewBox="0 0 64.00 64.00"
-                    version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    width="32vh"
-                    height="32vh"
-                    className="triangle"
-                  >
-                    <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
-                    <g
-                      id="SVGRepo_tracerCarrier"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    ></g>
-                    <g id="SVGRepo_iconCarrier">
-                      {" "}
-                      <title>Triangle-up</title>{" "}
-                      <desc>Created with Sketch.</desc>
-                      <defs>
-                        <linearGradient
-                          id="logo-gradient3"
-                          x1="50%"
-                          y1="0%"
-                          x2="50%"
-                          y2="100%"
-                        >
-                          <stop offset="0%" stopColor="#8c4ff5">
-                            <animate
-                              attributeName="stopColor"
-                              values="#8c4ff5; #ee6452; #8c4ff5"
-                              dur="4s"
-                              repeatCount="indefinite"
-                            ></animate>
-                          </stop>
+                        <title>Triangle-up</title>{" "}
+                        <desc>Created with Sketch.</desc>{" "}
+                        <defs>
+                          <linearGradient
+                            id="logo-gradient1"
+                            x1="50%"
+                            y1="0%"
+                            x2="50%"
+                            y2="100%"
+                          >
+                            <stop offset="0%" stopColor="#ca3419">
+                              <animate
+                                attributeName="stopColor"
+                                values="#ca3419; #3f51b1; #ca3419"
+                                dur="4s"
+                                repeatCount="indefinite"
+                              ></animate>
+                            </stop>
 
-                          <stop offset="100%" stopColor="#ee6452">
-                            <animate
-                              attributeName="stopColor"
-                              values="#ee6452; #8c4ff5; #ee6452"
-                              dur="4s"
-                              repeatCount="indefinite"
-                            ></animate>
-                          </stop>
-                        </linearGradient>
-                      </defs>{" "}
-                      <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
-                        {" "}
-                        <path
-                          d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
-                          id="Triangle-up"
-                          strokeWidth="0.212"
-                          fill="url('#logo-gradient3')"
-                          onMouseEnter={() => setHover3(true)}
-                          onMouseLeave={() => setHover3(false)}
-                          style={{ fillOpacity: hover3 ? 1 : 0 }}
-                        >
+                            <stop offset="100%" stopColor="#3f51b1">
+                              <animate
+                                attributeName="stopColor"
+                                values="#3f51b1; #ca3419; #3f51b1"
+                                dur="4s"
+                                repeatCount="indefinite"
+                              ></animate>
+                            </stop>
+                          </linearGradient>
+                        </defs>{" "}
+                        <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
                           {" "}
-                        </path>
-                        <text
-                          x="50%"
-                          y="55%"
-                          dominantBaseline="middle"
-                          textAnchor="middle"
-                          fontSize="4px"
-                          className="ostrich font-light tracking-widest"
-                          stroke="white"
-                          fill="#044B94"
-                          fillOpacity="0.4"
-                        >
-                          Ocean Networks
-                        </text>
-                      </g>{" "}
-                    </g>
-                  </svg>
-                </button>
-              </div>
-            </div>
+                          <path
+                            d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
+                            id="Triangle-up"
+                            strokeWidth="0.212"
+                            fill="url('#logo-gradient1')"
+                            onMouseEnter={() => setHover(true)}
+                            onMouseLeave={() => setHover(false)}
+                            style={{ fillOpacity: hover ? 1 : 0 }}
+                          >
+                            {" "}
+                          </path>{" "}
+                          <text
+                            x="50%"
+                            y="55%"
+                            dominantBaseline="middle"
+                            textAnchor="middle"
+                            fontSize="4px"
+                            className="ostrich font-light tracking-widest styledText"
+                            stroke="white"
+                            fill="#044B94"
+                            fillOpacity="0.4"
+                          >
+                            Burgundy Diamond Mines
+                          </text>
+                        </g>{" "}
+                      </g>
+                    </svg>
+                  </button>
+                  <div>
+                    <button className="pr-2" onClick={() => showCard2(true)}>
+                      <svg
+                        viewBox="0 0 64.00 64.00"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        width="32vh"
+                        height="32vh"
+                        className="triangle"
+                      >
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          {" "}
+                          <title>Triangle-up</title>{" "}
+                          <desc>Created with Sketch.</desc>
+                          <defs>
+                            <linearGradient
+                              id="logo-gradient2"
+                              x1="50%"
+                              y1="0%"
+                              x2="50%"
+                              y2="100%"
+                            >
+                              <stop offset="0%" stopColor="#576ffa">
+                                <animate
+                                  attributeName="stopColor"
+                                  values="#576ffa; #fc2003; #576ffa"
+                                  dur="4s"
+                                  repeatCount="indefinite"
+                                ></animate>
+                              </stop>
+
+                              <stop offset="100%" stopColor="#fc2003">
+                                <animate
+                                  attributeName="stopColor"
+                                  values="#fc2003; #576ffa; #fc2003"
+                                  dur="4s"
+                                  repeatCount="indefinite"
+                                  keyTimes="0; 0.5; 1"
+                                  keySplines="0.42 0 1 1; 0 0 0.58 1"
+                                  calcMode="spline"
+                                ></animate>
+                              </stop>
+                            </linearGradient>
+                          </defs>{" "}
+                          <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
+                            {" "}
+                            <path
+                              d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
+                              id="Triangle-up"
+                              strokeWidth="0.212"
+                              fill="url('#logo-gradient2')"
+                              onMouseEnter={() => setHover2(true)}
+                              onMouseLeave={() => setHover2(false)}
+                              style={{ fillOpacity: hover2 ? 1 : 0 }}
+                            >
+                              {" "}
+                            </path>{" "}
+                            <text
+                              x="50%"
+                              y="55%"
+                              dominantBaseline="middle"
+                              textAnchor="middle"
+                              fontSize="4px"
+                              className="ostrich font-light tracking-widest"
+                              stroke="white"
+                              fill="#044B94"
+                              fillOpacity="0.4"
+                            >
+                              Global Relay
+                            </text>
+                          </g>{" "}
+                        </g>
+                      </svg>
+                    </button>
+                    <button className="pl-2" onClick={() => showCard3(true)}>
+                      <svg
+                        viewBox="0 0 64.00 64.00"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        width="32vh"
+                        height="32vh"
+                        className="triangle"
+                      >
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          {" "}
+                          <title>Triangle-up</title>{" "}
+                          <desc>Created with Sketch.</desc>
+                          <defs>
+                            <linearGradient
+                              id="logo-gradient3"
+                              x1="50%"
+                              y1="0%"
+                              x2="50%"
+                              y2="100%"
+                            >
+                              <stop offset="0%" stopColor="#8c4ff5">
+                                <animate
+                                  attributeName="stopColor"
+                                  values="#8c4ff5; #ee6452; #8c4ff5"
+                                  dur="4s"
+                                  repeatCount="indefinite"
+                                ></animate>
+                              </stop>
+
+                              <stop offset="100%" stopColor="#ee6452">
+                                <animate
+                                  attributeName="stopColor"
+                                  values="#ee6452; #8c4ff5; #ee6452"
+                                  dur="4s"
+                                  repeatCount="indefinite"
+                                ></animate>
+                              </stop>
+                            </linearGradient>
+                          </defs>{" "}
+                          <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
+                            {" "}
+                            <path
+                              d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
+                              id="Triangle-up"
+                              strokeWidth="0.212"
+                              fill="url('#logo-gradient3')"
+                              onMouseEnter={() => setHover3(true)}
+                              onMouseLeave={() => setHover3(false)}
+                              style={{ fillOpacity: hover3 ? 1 : 0 }}
+                            >
+                              {" "}
+                            </path>
+                            <text
+                              x="50%"
+                              y="55%"
+                              dominantBaseline="middle"
+                              textAnchor="middle"
+                              fontSize="4px"
+                              className="ostrich font-light tracking-widest"
+                              stroke="white"
+                              fill="#044B94"
+                              fillOpacity="0.4"
+                            >
+                              Ocean Networks
+                            </text>
+                          </g>{" "}
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </Fade>
+            )}
+            {step > 1.5 && (
+              <Fade duration={1500}>
+                <div className="grid grid-cols-1 grid-rows-2 max-w-6xl justify-self-center z-20">
+                  <button className="justify-self-center main" disabled>
+                    <svg
+                      viewBox="0 0 64.00 64.00"
+                      version="1.1"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlnsXlink="http://www.w3.org/1999/xlink"
+                      width="32vh"
+                      height="32vh"
+                      className="triangle"
+                    >
+                      <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                      <g
+                        id="SVGRepo_tracerCarrier"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      ></g>
+                      <g id="SVGRepo_iconCarrier">
+                        {" "}
+                        <title>Triangle-up</title>{" "}
+                        <desc>Created with Sketch.</desc>{" "}
+                        <defs>
+                          <linearGradient
+                            id="logo-gradient1"
+                            x1="50%"
+                            y1="0%"
+                            x2="50%"
+                            y2="100%"
+                          >
+                            <stop offset="0%" stopColor="#ca3419">
+                              <animate
+                                attributeName="stopColor"
+                                values="#ca3419; #3f51b1; #ca3419"
+                                dur="4s"
+                                repeatCount="indefinite"
+                              ></animate>
+                            </stop>
+
+                            <stop offset="100%" stopColor="#3f51b1">
+                              <animate
+                                attributeName="stopColor"
+                                values="#3f51b1; #ca3419; #3f51b1"
+                                dur="4s"
+                                repeatCount="indefinite"
+                              ></animate>
+                            </stop>
+                          </linearGradient>
+                        </defs>{" "}
+                        <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
+                          {" "}
+                          <path
+                            d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
+                            id="Triangle-up_d"
+                            strokeWidth="0.212"
+                            fill="url('#logo-gradient1')"
+                            onMouseEnter={() => setHover(true)}
+                            onMouseLeave={() => setHover(false)}
+                            style={{ fillOpacity: hover ? 1 : 0 }}
+                          >
+                            {" "}
+                          </path>{" "}
+                          <text
+                            x="50%"
+                            y="55%"
+                            dominantBaseline="middle"
+                            textAnchor="middle"
+                            fontSize="4px"
+                            className="ostrich font-light tracking-widest styledText"
+                            stroke="white"
+                            fill="#044B94"
+                            fillOpacity="0.4"
+                          >
+                            Paleo-Classifier
+                          </text>
+                          <text
+                            x="50%"
+                            y="65%"
+                            dominantBaseline="middle"
+                            textAnchor="middle"
+                            fontSize="4px"
+                            className="ostrich font-light tracking-widest"
+                            stroke="white"
+                            fill="#044B94"
+                            fillOpacity="0.4"
+                          >
+                            (Under Development)
+                          </text>
+                        </g>{" "}
+                      </g>
+                    </svg>
+                  </button>
+                  <div>
+                    <button className="pr-2" disabled>
+                      <svg
+                        viewBox="0 0 64.00 64.00"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        width="32vh"
+                        height="32vh"
+                        className="triangle"
+                      >
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          {" "}
+                          <title>Triangle-up</title>{" "}
+                          <desc>Created with Sketch.</desc>
+                          <defs>
+                            <linearGradient
+                              id="logo-gradient2"
+                              x1="50%"
+                              y1="0%"
+                              x2="50%"
+                              y2="100%"
+                            >
+                              <stop offset="0%" stopColor="#576ffa">
+                                <animate
+                                  attributeName="stopColor"
+                                  values="#576ffa; #fc2003; #576ffa"
+                                  dur="4s"
+                                  repeatCount="indefinite"
+                                ></animate>
+                              </stop>
+
+                              <stop offset="100%" stopColor="#fc2003">
+                                <animate
+                                  attributeName="stopColor"
+                                  values="#fc2003; #576ffa; #fc2003"
+                                  dur="4s"
+                                  repeatCount="indefinite"
+                                  keyTimes="0; 0.5; 1"
+                                  keySplines="0.42 0 1 1; 0 0 0.58 1"
+                                  calcMode="spline"
+                                ></animate>
+                              </stop>
+                            </linearGradient>
+                          </defs>{" "}
+                          <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
+                            {" "}
+                            <path
+                              d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
+                              id="Triangle-up_d"
+                              strokeWidth="0.212"
+                              fill="url('#logo-gradient2')"
+                              onMouseEnter={() => setHover2(true)}
+                              onMouseLeave={() => setHover2(false)}
+                              style={{ fillOpacity: hover2 ? 1 : 0 }}
+                            >
+                              {" "}
+                            </path>{" "}
+                            <text
+                              x="50%"
+                              y="55%"
+                              dominantBaseline="middle"
+                              textAnchor="middle"
+                              fontSize="4px"
+                              className="ostrich font-light tracking-widest"
+                              stroke="white"
+                              fill="#044B94"
+                              fillOpacity="0.4"
+                            >
+                              GenieBox
+                            </text>
+                            <text
+                              x="50%"
+                              y="65%"
+                              dominantBaseline="middle"
+                              textAnchor="middle"
+                              fontSize="4px"
+                              className="ostrich font-light tracking-widest"
+                              stroke="white"
+                              fill="#044B94"
+                              fillOpacity="0.4"
+                            >
+                              (Under Development)
+                            </text>
+                          </g>{" "}
+                        </g>
+                      </svg>
+                    </button>
+                    <button className="pl-2" disabled>
+                      <svg
+                        viewBox="0 0 64.00 64.00"
+                        version="1.1"
+                        xmlns="http://www.w3.org/2000/svg"
+                        xmlnsXlink="http://www.w3.org/1999/xlink"
+                        width="32vh"
+                        height="32vh"
+                        className="triangle"
+                      >
+                        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
+                        <g
+                          id="SVGRepo_tracerCarrier"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        ></g>
+                        <g id="SVGRepo_iconCarrier">
+                          {" "}
+                          <title>Triangle-up</title>{" "}
+                          <desc>Created with Sketch.</desc>
+                          <defs>
+                            <linearGradient
+                              id="logo-gradient3"
+                              x1="50%"
+                              y1="0%"
+                              x2="50%"
+                              y2="100%"
+                            >
+                              <stop offset="0%" stopColor="#8c4ff5">
+                                <animate
+                                  attributeName="stopColor"
+                                  values="#8c4ff5; #ee6452; #8c4ff5"
+                                  dur="4s"
+                                  repeatCount="indefinite"
+                                ></animate>
+                              </stop>
+
+                              <stop offset="100%" stopColor="#ee6452">
+                                <animate
+                                  attributeName="stopColor"
+                                  values="#ee6452; #8c4ff5; #ee6452"
+                                  dur="4s"
+                                  repeatCount="indefinite"
+                                ></animate>
+                              </stop>
+                            </linearGradient>
+                          </defs>{" "}
+                          <g id="Page-1" strokeWidth="0.212" fillRule="evenodd">
+                            {" "}
+                            <path
+                              d="M3,45 C1.9,45 1,44.2 1,43.1 L29,2.9 C30.1,1.3 31.3,1 32.1,1 L32.1,1 C32.1,1 33.8,1.1 35.1,2.9 L63,43.1 C63,44.1 62.1,45 61,45 L3,45 L3,45 Z"
+                              id="Triangle-up_d"
+                              strokeWidth="0.212"
+                              fill="url('#logo-gradient3')"
+                              onMouseEnter={() => setHover3(true)}
+                              onMouseLeave={() => setHover3(false)}
+                              style={{ fillOpacity: hover3 ? 1 : 0 }}
+                            >
+                              {" "}
+                            </path>
+                            <text
+                              x="50%"
+                              y="55%"
+                              dominantBaseline="middle"
+                              textAnchor="middle"
+                              fontSize="4px"
+                              className="ostrich font-light tracking-widest"
+                              stroke="white"
+                              fill="#044B94"
+                              fillOpacity="0.4"
+                            >
+                              Job Aggregator
+                            </text>
+                            <text
+                              x="50%"
+                              y="65%"
+                              dominantBaseline="middle"
+                              textAnchor="middle"
+                              fontSize="4px"
+                              className="ostrich font-light tracking-widest"
+                              stroke="white"
+                              fill="#044B94"
+                              fillOpacity="0.4"
+                            >
+                              (Under Development)
+                            </text>
+                          </g>{" "}
+                        </g>
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </Fade>
+            )}
+            <Slider
+              className="max-w-md m-auto gap-3 pl-16 pr-16"
+              marks={[
+                {
+                  value: 1,
+                  label: "1",
+                },
+                {
+                  value: 2,
+                  label: "2",
+                },
+              ]}
+              color="foreground"
+              defaultValue={1}
+              maxValue={2}
+              minValue={1}
+              size="md"
+              disableThumbScale={true}
+              onChange={(value) => setStep(value as number)}
+              step={0.01}
+            />
           </div>
         </Fade>
       </section>
@@ -1101,8 +1414,7 @@ export default function Home() {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 330 330"
                 xmlSpace="preserve"
-                className="z-20 absolute left
-                top-1/3 hi"
+                className="z-20 absolute left high"
                 onMouseEnter={() => setArr1(true)}
                 onMouseLeave={() => setArr1(false)}
               >
@@ -1160,7 +1472,7 @@ export default function Home() {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 viewBox="0 0 330 330"
                 xmlSpace="preserve"
-                className="z-20 absolute right top-1/3 hi"
+                className="z-20 absolute right high"
                 transform="scale(-1,1)"
                 onMouseEnter={() => setArr2(true)}
                 onMouseLeave={() => setArr2(false)}
@@ -1203,7 +1515,7 @@ export default function Home() {
                 />
               </svg>
             </a>
-            <div className="glass mx-auto m-12 max-w-96 marg">
+            <div className="glass mx-auto m-12 max-w-96">
               <svg
                 version="1.1"
                 width="320"
@@ -1385,10 +1697,12 @@ export default function Home() {
           </div>
         </Fade>
       </section>
-      <Header />
+      <Header setSection={setSection} />
       <Pagination
-        className="overide z-20 ostrich fixed bottom-0 pb-6 inset-x-1/2"
+        className="overide z-20 ostrich fixed bottom-0 pb-6"
         showShadow
+        loop
+        showControls
         color="danger"
         total={4}
         initialPage={1}

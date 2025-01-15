@@ -1,10 +1,19 @@
+import { set } from "lodash";
 import React from "react";
 
-const Header: React.FC = () => {
+interface HeaderProps {
+  setSection: (section: number) => void;
+}
+
+const Header: React.FC<HeaderProps> = ({ setSection }) => {
+  const handleClick = () => {
+    window.location.href = "#one";
+    setSection(1);
+  };
   return (
     <div className="fixed top-0 z-20 w-full">
       <header className="flex pt-8 pl-3 justify-between">
-        <div className="flex-wrap">
+        <button onClick={handleClick} className="flex-wrap">
           <svg
             className="logo"
             width="100"
@@ -40,8 +49,11 @@ const Header: React.FC = () => {
               </g>
             </g>
           </svg>
+        </button>
+        <div>
+          <p className="ostrich text-xl text-center pt-4">transMigrate</p>
+          <p className="ostrich text-base text-center">Founded by Rahul</p>
         </div>
-        <p className="ostrich text-xl text-center pt-4">transMigrate</p>
         <div className="social-card">
           <a href="https://github.com/rahulnag7963" className="Btn github">
             <span className="svgContainer">

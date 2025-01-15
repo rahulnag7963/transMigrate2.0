@@ -111,6 +111,17 @@ a {
   transition: all 1.4s;
 }
 
+#Triangle-up_d {
+  opacity: 1;
+  transition: all 1.4s;
+}
+
+#Triangle-up_d:hover {
+  opacity: 1;
+  transition: all 1.4s;
+  filter: brightness(10%);
+}
+
 .triangle:hover {
   opacity: 1;
 }
@@ -150,6 +161,15 @@ div h2 button div span {
 
 .text-foreground {
   font-size: 3.75rem !important;
+}
+
+.bg-content1{
+  background: transparent;
+}
+
+.links:hover{
+  text-decoration: underline;
+  transition: ease-in-out 0.5s;
 }
 
 .unset {
@@ -287,7 +307,28 @@ section {
 
 .overide {
   overflow-x: unset !important;
-  margin-left: -5.5rem;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  top: 94%;
+}
+
+button:disabled {
+  backdrop-filter: blur(10px);
+}
+
+.overide ul li {
+  background-color: transparent !important;
+}
+
+.overide ul :nth-child(2):hover {
+  transition: ease-in-out 0.25s;
+  background-color: rgb(255, 0, 106) !important;
+}
+
+.overide ul :nth-child(7):hover {
+  transition: ease-in-out 0.25s;
+  background-color: rgb(255, 0, 106) !important;
 }
 
 @keyframes gradient {
@@ -438,7 +479,7 @@ video {
 }
 
 .high {
-  top: 40%;
+  
 }
 
 .colors {
@@ -515,6 +556,9 @@ video {
 }
 
 .left {
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
   left: 85%;
   stroke: white;
   stroke-opacity: 1;
@@ -526,6 +570,9 @@ video {
 }
 
 .right {
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
   right: 85%;
   stroke: white;
   stroke-opacity: 1;
@@ -621,22 +668,23 @@ a {
   }
 
   .high {
-    top: 80% !important;
+    display: none;
   }
 
   div h2 button div span {
     font-size: 1.75rem !important;
     padding: 0.25rem !important;
   }
-  .text-foreground {
-    font-size: 1.75rem !important;
-  }
 }
 
-@media only screen and (max-width: 960px) {
+@media only screen and (max-width: 962px) {
   .brand {
     width: 100% !important;
     height: auto !important;
+  }
+
+  .text-foreground {
+    font-size: 1.75rem !important;
   }
 
   .cardsize {
