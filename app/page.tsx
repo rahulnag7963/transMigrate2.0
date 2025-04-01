@@ -16,7 +16,7 @@ import NET from "vanta/src/vanta.net.js";
 import Header from "@/components/header";
 import Relay from "../media/global.png";
 import { Pagination } from "@nextui-org/react";
-import { Accordion, AccordionItem } from "@nextui-org/react";
+import { Accordion, AccordionItem, Spacer } from "@nextui-org/react";
 import { Modal, ModalContent, ModalBody } from "@nextui-org/react";
 import { Slider } from "@nextui-org/react";
 import { set } from "lodash";
@@ -529,11 +529,12 @@ export default function Home() {
               <div className="pr-8">
                 <Image
                   id={small <= 1 ? "abstract" : ""}
-                  isBlurred
+                  isBlurred={small <= 1 ? true : false}
                   width={small == 1 ? 220 : small == 2 ? 140 : 440}
                   height={small == 1 ? 220 : small == 2 ? 140 : 440}
                   src={goog.src}
-                  alt="NextUI Album Cover"
+                  alt="Google Deepmind"
+                  aria-label="Google Deepmind"
                   className="alt m-8 header z-10"
                 />
               </div>
@@ -1527,8 +1528,8 @@ export default function Home() {
             <div className="glass mx-auto space max-w-96">
               <svg
                 version="1.1"
-                width="320"
-                height="320"
+                width="320px"
+                height="320px"
                 viewBox="0 0 320 320"
                 fill="none"
                 stroke="blue"
@@ -1539,27 +1540,15 @@ export default function Home() {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
               >
                 <defs>
-                  <linearGradient
-                    id="gradient1"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="0%"
-                  >
-                    <stop offset="0%" stopColor="#e72e16" />
-                    <stop offset="50%" stopColor="#7687e6" />
-                    <stop offset="100%" stopColor="#0c1554" />
+                  <linearGradient id="gradient1" x1="0" y1="0" x2="100" y2="0">
+                    <stop offset="0" stopColor="#e72e16" />
+                    <stop offset="50" stopColor="#7687e6" />
+                    <stop offset="100" stopColor="#0c1554" />
                   </linearGradient>
-                  <linearGradient
-                    id="gradient2"
-                    x1="0%"
-                    y1="0%"
-                    x2="100%"
-                    y2="0%"
-                  >
-                    <stop offset="0%" stopColor="#0c1554" />
-                    <stop offset="50%" stopColor="#7687e6" />
-                    <stop offset="100%" stopColor="#e72e16" />
+                  <linearGradient id="gradient2" x1="0" y1="0" x2="100" y2="0">
+                    <stop offset="0" stopColor="#6e00a7" />
+                    <stop offset="50" stopColor="#7687e6" />
+                    <stop offset="100" stopColor="#e72e16" />
                   </linearGradient>
                   <path id="r1" stroke="url(#gradient1)">
                     <animate
@@ -1707,19 +1696,21 @@ export default function Home() {
         </Fade>
       </section>
       <Header setSection={setSection} />
-      <Pagination
-        className="overide z-20 ostrich fixed box-border"
-        showShadow
-        loop
-        showControls
-        color="danger"
-        total={4}
-        initialPage={1}
-        page={section}
-        onChange={(page) => {
-          handlePageClick(page);
-        }}
-      />
+      <div className="fixed overide z-20 ostrich box-border">
+        <Pagination
+          className=""
+          showShadow
+          loop
+          showControls
+          color="danger"
+          total={4}
+          initialPage={1}
+          page={section}
+          onChange={(page) => {
+            handlePageClick(page);
+          }}
+        />
+      </div>
       <div className="loading-page z-30">
         <svg
           className="logo"

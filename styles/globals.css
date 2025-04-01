@@ -722,7 +722,9 @@ a {
     width: 160px !important;
     height: 160px !important;
   }
-
+  .overide {
+    top: 92% !important;
+  }
   .cardpos {
     top: -10%;
   }
