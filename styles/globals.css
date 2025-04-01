@@ -94,6 +94,13 @@ a {
   }
 }
 
+.vid{
+  -webkit-transform: translate3d(0,0,0);
+}
+.b{
+  padding-top: 5rem !important;
+}
+
 .triangle {
   z-index: -1;
   stroke: white;
@@ -644,7 +651,17 @@ a {
   color: #8015c7;
 }
 
+.space{
+  margin-top:3rem;
+  margin-bottom: 3rem;
+}
+
 @media only screen and (max-width: 860px) {
+.space{
+  margin-top:0rem !important;
+  margin-bottom: 0rem !important;
+}
+
   .size {
     font-size: 3rem !important;
   }

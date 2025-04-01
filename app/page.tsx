@@ -162,10 +162,12 @@ export default function Home() {
       <section className=" relative panel grid items-center z-10" id="one">
         <Fade>
           <video
-            className="absolute object-cover top-0 left-0 z-10"
+            className="vid absolute object-cover top-0 left-0 z-10"
             loop
             autoPlay
             muted
+            width="100%"
+            playsInline
           >
             <source src="/video.mp4" type="video/mp4" />
           </video>
@@ -524,15 +526,17 @@ export default function Home() {
                   </AccordionItem>
                 </Accordion>
               </div>
-              <Image
-                id={small < 1 ? "abstract" : "p-4"}
-                isBlurred
-                width={small == 1 ? 220 : small == 2 ? 140 : 440}
-                height={small == 1 ? 220 : small == 2 ? 140 : 440}
-                src={goog.src}
-                alt="NextUI Album Cover"
-                className="alt m-8 header z-10"
-              />
+              <div className="pr-8">
+                <Image
+                  id={small <= 1 ? "abstract" : ""}
+                  isBlurred
+                  width={small == 1 ? 220 : small == 2 ? 140 : 440}
+                  height={small == 1 ? 220 : small == 2 ? 140 : 440}
+                  src={goog.src}
+                  alt="NextUI Album Cover"
+                  className="alt m-8 header z-10"
+                />
+              </div>
             </div>
           </div>
         </Fade>
@@ -541,16 +545,17 @@ export default function Home() {
         <Fade cascade className="grid panel items-center z-20">
           <div className="text-center z-20">
             <p className="text-7xl ostrich z-20 size">
-              {" "}
-              Past Projects/Work Experience:{" "}
+              Previous Work Experience:
             </p>
             <div className="cards z-20">
               <Modal
                 isOpen={card1}
                 onOpenChange={showCard1}
-                size="5xl"
+                size="full"
                 backdrop="blur"
                 placement="center"
+                className="justify-items-center items-center"
+                classNames={{ closeButton: "mt-24 mr-6" }}
               >
                 <ModalContent>
                   {(onClose) => (
@@ -607,9 +612,11 @@ export default function Home() {
               <Modal
                 isOpen={card2}
                 onOpenChange={showCard2}
-                size="5xl"
+                size="full"
                 backdrop="blur"
                 placement="center"
+                className="justify-items-center items-center"
+                classNames={{ closeButton: "mt-24 mr-6" }}
               >
                 <ModalContent>
                   {(onClose) => (
@@ -667,9 +674,11 @@ export default function Home() {
               <Modal
                 isOpen={card3}
                 onOpenChange={showCard3}
-                size="5xl"
+                size="full"
                 backdrop="blur"
                 placement="center"
+                className="justify-items-center items-center"
+                classNames={{ closeButton: "mt-24 mr-6" }}
               >
                 <ModalContent>
                   {(onClose) => (
@@ -1515,7 +1524,7 @@ export default function Home() {
                 />
               </svg>
             </a>
-            <div className="glass mx-auto m-12 max-w-96">
+            <div className="glass mx-auto space max-w-96">
               <svg
                 version="1.1"
                 width="320"
@@ -1650,48 +1659,48 @@ export default function Home() {
                     />
                   </path>
                 </defs>
-                <use xlinkHref="#r1" />
-                <use xlinkHref="#r1" transform="rotate(60 160 160)" />
-                <use xlinkHref="#r1" transform="rotate(120 160 160)" />
-                <use xlinkHref="#r1" transform="rotate(180 160 160)" />
-                <use xlinkHref="#r1" transform="rotate(240 160 160)" />
-                <use xlinkHref="#r1" transform="rotate(300 160 160)" />
-                <use xlinkHref="#r2" transform="rotate(30 160 160)" />
-                <use xlinkHref="#r2" transform="rotate(90 160 160)" />
-                <use xlinkHref="#r2" transform="rotate(150 160 160)" />
-                <use xlinkHref="#r2" transform="rotate(210 160 160)" />
-                <use xlinkHref="#r2" transform="rotate(270 160 160)" />
-                <use xlinkHref="#r2" transform="rotate(330 160 160)" />
-                <use xlinkHref="#r3" />
-                <use xlinkHref="#r3" transform="rotate(60 160 160)" />
-                <use xlinkHref="#r3" transform="rotate(120 160 160)" />
-                <use xlinkHref="#r3" transform="rotate(180 160 160)" />
-                <use xlinkHref="#r3" transform="rotate(240 160 160)" />
-                <use xlinkHref="#r3" transform="rotate(300 160 160)" />
-                <use xlinkHref="#r4" transform="rotate(30 160 160)" />
-                <use xlinkHref="#r4" transform="rotate(90 160 160)" />
-                <use xlinkHref="#r4" transform="rotate(150 160 160)" />
-                <use xlinkHref="#r4" transform="rotate(210 160 160)" />
-                <use xlinkHref="#r4" transform="rotate(270 160 160)" />
-                <use xlinkHref="#r4" transform="rotate(330 160 160)" />
-                <use xlinkHref="#r5" />
-                <use xlinkHref="#r5" transform="rotate(60 160 160)" />
-                <use xlinkHref="#r5" transform="rotate(120 160 160)" />
-                <use xlinkHref="#r5" transform="rotate(180 160 160)" />
-                <use xlinkHref="#r5" transform="rotate(240 160 160)" />
-                <use xlinkHref="#r5" transform="rotate(300 160 160)" />
-                <use xlinkHref="#r6" transform="rotate(30 160 160)" />
-                <use xlinkHref="#r6" transform="rotate(90 160 160)" />
-                <use xlinkHref="#r6" transform="rotate(150 160 160)" />
-                <use xlinkHref="#r6" transform="rotate(210 160 160)" />
-                <use xlinkHref="#r6" transform="rotate(270 160 160)" />
-                <use xlinkHref="#r6" transform="rotate(330 160 160)" />
+                <use href="#r1" />
+                <use href="#r1" transform="rotate(60 160 160)" />
+                <use href="#r1" transform="rotate(120 160 160)" />
+                <use href="#r1" transform="rotate(180 160 160)" />
+                <use href="#r1" transform="rotate(240 160 160)" />
+                <use href="#r1" transform="rotate(300 160 160)" />
+                <use href="#r2" transform="rotate(30 160 160)" />
+                <use href="#r2" transform="rotate(90 160 160)" />
+                <use href="#r2" transform="rotate(150 160 160)" />
+                <use href="#r2" transform="rotate(210 160 160)" />
+                <use href="#r2" transform="rotate(270 160 160)" />
+                <use href="#r2" transform="rotate(330 160 160)" />
+                <use href="#r3" />
+                <use href="#r3" transform="rotate(60 160 160)" />
+                <use href="#r3" transform="rotate(120 160 160)" />
+                <use href="#r3" transform="rotate(180 160 160)" />
+                <use href="#r3" transform="rotate(240 160 160)" />
+                <use href="#r3" transform="rotate(300 160 160)" />
+                <use href="#r4" transform="rotate(30 160 160)" />
+                <use href="#r4" transform="rotate(90 160 160)" />
+                <use href="#r4" transform="rotate(150 160 160)" />
+                <use href="#r4" transform="rotate(210 160 160)" />
+                <use href="#r4" transform="rotate(270 160 160)" />
+                <use href="#r4" transform="rotate(330 160 160)" />
+                <use href="#r5" />
+                <use href="#r5" transform="rotate(60 160 160)" />
+                <use href="#r5" transform="rotate(120 160 160)" />
+                <use href="#r5" transform="rotate(180 160 160)" />
+                <use href="#r5" transform="rotate(240 160 160)" />
+                <use href="#r5" transform="rotate(300 160 160)" />
+                <use href="#r6" transform="rotate(30 160 160)" />
+                <use href="#r6" transform="rotate(90 160 160)" />
+                <use href="#r6" transform="rotate(150 160 160)" />
+                <use href="#r6" transform="rotate(210 160 160)" />
+                <use href="#r6" transform="rotate(270 160 160)" />
+                <use href="#r6" transform="rotate(330 160 160)" />
               </svg>
             </div>
             <p className="mt-2 text-5xl ostrich mb-12 sizesm marg">
               Lets create something amazing together!
             </p>
-            <a href="mailto:rahulnag7963@gmail.com">
+            <a href="mailto:rahulnag7963@gmail.com" className="pb-12">
               <button className="cont"> Email me! </button>
             </a>
           </div>
@@ -1699,7 +1708,7 @@ export default function Home() {
       </section>
       <Header setSection={setSection} />
       <Pagination
-        className="overide z-20 ostrich fixed bottom-0 pb-6"
+        className="overide z-20 ostrich fixed box-border"
         showShadow
         loop
         showControls
