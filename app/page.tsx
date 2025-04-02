@@ -1532,7 +1532,7 @@ export default function Home() {
                 height="320px"
                 viewBox="0 0 320 320"
                 fill="none"
-                stroke="blue"
+                stroke="#32a852"
                 strokeLinecap="round"
                 strokeWidth={3}
                 className="justify-self-center"
