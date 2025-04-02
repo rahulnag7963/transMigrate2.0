@@ -1540,30 +1540,6 @@ export default function Home() {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
               >
                 <defs>
-                  <linearGradient
-                    id="gradient1"
-                    x1="0"
-                    y1="0"
-                    x2="100"
-                    y2="0"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0%" stopColor="#6e00a7" />
-                    <stop offset="50%" stopColor="#7687e6" />
-                    <stop offset="100%" stopColor="#6e00a7" />
-                  </linearGradient>
-                  <linearGradient
-                    id="gradient2"
-                    x1="0"
-                    y1="0"
-                    x2="100"
-                    y2="0"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop offset="0%" stopColor="#6e00a7" />
-                    <stop offset="50%" stopColor="#7687e6" />
-                    <stop offset="100%" stopColor="#e72e16" />
-                  </linearGradient>
                   <path id="r1">
                     <animate
                       id="p1"
@@ -1662,6 +1638,30 @@ export default function Home() {
                       begin="p1.begin+5s"
                     />
                   </path>
+                  <linearGradient
+                    id="gradient1"
+                    x1="0"
+                    y1="0"
+                    x2="100"
+                    y2="0"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0%" stopColor="#6e00a7" />
+                    <stop offset="50%" stopColor="#7687e6" />
+                    <stop offset="100%" stopColor="#6e00a7" />
+                  </linearGradient>
+                  <linearGradient
+                    id="gradient2"
+                    x1="0"
+                    y1="0"
+                    x2="100"
+                    y2="0"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0%" stopColor="#6e00a7" />
+                    <stop offset="50%" stopColor="#7687e6" />
+                    <stop offset="100%" stopColor="#e72e16" />
+                  </linearGradient>
                 </defs>
                 <use href="#r1" stroke="url(#gradient1)" />
                 <use
