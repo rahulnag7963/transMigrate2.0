@@ -1540,15 +1540,29 @@ export default function Home() {
                 xmlnsXlink="http://www.w3.org/1999/xlink"
               >
                 <defs>
-                  <linearGradient id="gradient1" x1="0" y1="0" x2="100" y2="0">
-                    <stop offset="0" stopColor="#e72e16" />
-                    <stop offset="50" stopColor="#7687e6" />
-                    <stop offset="100" stopColor="#0c1554" />
+                  <linearGradient
+                    id="gradient1"
+                    x1="0"
+                    y1="0"
+                    x2="100"
+                    y2="0"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0%" stopColor="#6e00a7" />
+                    <stop offset="50%" stopColor="#7687e6" />
+                    <stop offset="100%" stopColor="#6e00a7" />
                   </linearGradient>
-                  <linearGradient id="gradient2" x1="0" y1="0" x2="100" y2="0">
-                    <stop offset="0" stopColor="#6e00a7" />
-                    <stop offset="50" stopColor="#7687e6" />
-                    <stop offset="100" stopColor="#e72e16" />
+                  <linearGradient
+                    id="gradient2"
+                    x1="0"
+                    y1="0"
+                    x2="100"
+                    y2="0"
+                    gradientUnits="userSpaceOnUse"
+                  >
+                    <stop offset="0%" stopColor="#6e00a7" />
+                    <stop offset="50%" stopColor="#7687e6" />
+                    <stop offset="100%" stopColor="#e72e16" />
                   </linearGradient>
                   <path id="r1" stroke="url(#gradient1)">
                     <animate
@@ -1557,13 +1571,14 @@ export default function Home() {
                       values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0"
                       dur="6s"
                       repeatCount="indefinite"
+                      begin="0s"
                     />
                     <animate
                       attributeName="strokeWidth"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
-                      begin="p1.begin"
+                      begin="0s"
                     />
                   </path>
                   <path id="r2" stroke="url(#gradient2)">
