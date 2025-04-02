@@ -10,7 +10,7 @@ body {
   cursor: url("../media/circle.svg"), default;
   cursor: url("../media/circle.svg"), pointer;
 }
-svg {
+.saf{
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
 }

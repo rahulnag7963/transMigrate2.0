@@ -1535,7 +1535,7 @@ export default function Home() {
                 stroke="blue"
                 strokeLinecap="round"
                 strokeWidth={3}
-                className="justify-self-center"
+                className="justify-self-center saf"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
               >
@@ -1564,7 +1564,7 @@ export default function Home() {
                     <stop offset="50%" stopColor="#7687e6" />
                     <stop offset="100%" stopColor="#e72e16" />
                   </linearGradient>
-                  <path id="r1" stroke="url(#gradient1)">
+                  <path id="r1">
                     <animate
                       id="p1"
                       attributeName="d"
@@ -1581,7 +1581,7 @@ export default function Home() {
                       begin="0s"
                     />
                   </path>
-                  <path id="r2" stroke="url(#gradient2)">
+                  <path id="r2">
                     <animate
                       attributeName="d"
                       values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0"
@@ -1597,7 +1597,7 @@ export default function Home() {
                       begin="p1.begin+1s"
                     />
                   </path>
-                  <path id="r3" stroke="url(#gradient1)">
+                  <path id="r3">
                     <animate
                       attributeName="d"
                       values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0"
@@ -1613,7 +1613,7 @@ export default function Home() {
                       begin="p1.begin+2s"
                     />
                   </path>
-                  <path id="r4" stroke="url(#gradient2)">
+                  <path id="r4">
                     <animate
                       id="p1"
                       attributeName="d"
@@ -1630,7 +1630,7 @@ export default function Home() {
                       begin="p1.begin+3s"
                     />
                   </path>
-                  <path id="r5" stroke="url(#gradient1)">
+                  <path id="r5">
                     <animate
                       attributeName="d"
                       values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0"
@@ -1646,7 +1646,7 @@ export default function Home() {
                       begin="p1.begin+4s"
                     />
                   </path>
-                  <path id="r6" stroke="url(#gradient2)">
+                  <path id="r6">
                     <animate
                       attributeName="d"
                       values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0"
@@ -1663,42 +1663,174 @@ export default function Home() {
                     />
                   </path>
                 </defs>
-                <use href="#r1" />
-                <use href="#r1" transform="rotate(60 160 160)" />
-                <use href="#r1" transform="rotate(120 160 160)" />
-                <use href="#r1" transform="rotate(180 160 160)" />
-                <use href="#r1" transform="rotate(240 160 160)" />
-                <use href="#r1" transform="rotate(300 160 160)" />
-                <use href="#r2" transform="rotate(30 160 160)" />
-                <use href="#r2" transform="rotate(90 160 160)" />
-                <use href="#r2" transform="rotate(150 160 160)" />
-                <use href="#r2" transform="rotate(210 160 160)" />
-                <use href="#r2" transform="rotate(270 160 160)" />
-                <use href="#r2" transform="rotate(330 160 160)" />
-                <use href="#r3" />
-                <use href="#r3" transform="rotate(60 160 160)" />
-                <use href="#r3" transform="rotate(120 160 160)" />
-                <use href="#r3" transform="rotate(180 160 160)" />
-                <use href="#r3" transform="rotate(240 160 160)" />
-                <use href="#r3" transform="rotate(300 160 160)" />
-                <use href="#r4" transform="rotate(30 160 160)" />
-                <use href="#r4" transform="rotate(90 160 160)" />
-                <use href="#r4" transform="rotate(150 160 160)" />
-                <use href="#r4" transform="rotate(210 160 160)" />
-                <use href="#r4" transform="rotate(270 160 160)" />
-                <use href="#r4" transform="rotate(330 160 160)" />
-                <use href="#r5" />
-                <use href="#r5" transform="rotate(60 160 160)" />
-                <use href="#r5" transform="rotate(120 160 160)" />
-                <use href="#r5" transform="rotate(180 160 160)" />
-                <use href="#r5" transform="rotate(240 160 160)" />
-                <use href="#r5" transform="rotate(300 160 160)" />
-                <use href="#r6" transform="rotate(30 160 160)" />
-                <use href="#r6" transform="rotate(90 160 160)" />
-                <use href="#r6" transform="rotate(150 160 160)" />
-                <use href="#r6" transform="rotate(210 160 160)" />
-                <use href="#r6" transform="rotate(270 160 160)" />
-                <use href="#r6" transform="rotate(330 160 160)" />
+                <use href="#r1" stroke="url(#gradient1)" />
+                <use
+                  href="#r1"
+                  stroke="url(#gradient1)"
+                  transform="rotate(60 160 160)"
+                />
+                <use
+                  href="#r1"
+                  stroke="url(#gradient1)"
+                  transform="rotate(120 160 160)"
+                />
+                <use
+                  href="#r1"
+                  stroke="url(#gradient1)"
+                  transform="rotate(180 160 160)"
+                />
+                <use
+                  href="#r1"
+                  stroke="url(#gradient1)"
+                  transform="rotate(240 160 160)"
+                />
+                <use
+                  href="#r1"
+                  stroke="url(#gradient1)"
+                  transform="rotate(300 160 160)"
+                />
+                <use
+                  href="#r2"
+                  stroke="url(#gradient2)"
+                  transform="rotate(30 160 160)"
+                />
+                <use
+                  href="#r2"
+                  stroke="url(#gradient2)"
+                  transform="rotate(90 160 160)"
+                />
+                <use
+                  href="#r2"
+                  stroke="url(#gradient2)"
+                  transform="rotate(150 160 160)"
+                />
+                <use
+                  href="#r2"
+                  stroke="url(#gradient2)"
+                  transform="rotate(210 160 160)"
+                />
+                <use
+                  href="#r2"
+                  stroke="url(#gradient2)"
+                  transform="rotate(270 160 160)"
+                />
+                <use
+                  href="#r2"
+                  stroke="url(#gradient2)"
+                  transform="rotate(330 160 160)"
+                />
+                <use href="#r3" stroke="url(#gradient1)" />
+                <use
+                  href="#r3"
+                  stroke="url(#gradient1)"
+                  transform="rotate(60 160 160)"
+                />
+                <use
+                  href="#r3"
+                  stroke="url(#gradient1)"
+                  transform="rotate(120 160 160)"
+                />
+                <use
+                  href="#r3"
+                  stroke="url(#gradient1)"
+                  transform="rotate(180 160 160)"
+                />
+                <use
+                  href="#r3"
+                  stroke="url(#gradient1)"
+                  transform="rotate(240 160 160)"
+                />
+                <use
+                  href="#r3"
+                  stroke="url(#gradient1)"
+                  transform="rotate(300 160 160)"
+                />
+                <use
+                  href="#r4"
+                  stroke="url(#gradient2)"
+                  transform="rotate(30 160 160)"
+                />
+                <use
+                  href="#r4"
+                  stroke="url(#gradient2)"
+                  transform="rotate(90 160 160)"
+                />
+                <use
+                  href="#r4"
+                  stroke="url(#gradient2)"
+                  transform="rotate(150 160 160)"
+                />
+                <use
+                  href="#r4"
+                  stroke="url(#gradient2)"
+                  transform="rotate(210 160 160)"
+                />
+                <use
+                  href="#r4"
+                  stroke="url(#gradient2)"
+                  transform="rotate(270 160 160)"
+                />
+                <use
+                  href="#r4"
+                  stroke="url(#gradient2)"
+                  transform="rotate(330 160 160)"
+                />
+                <use href="#r5" stroke="url(#gradient1)" />
+                <use
+                  href="#r5"
+                  stroke="url(#gradient1)"
+                  transform="rotate(60 160 160)"
+                />
+                <use
+                  href="#r5"
+                  stroke="url(#gradient1)"
+                  transform="rotate(120 160 160)"
+                />
+                <use
+                  href="#r5"
+                  stroke="url(#gradient1)"
+                  transform="rotate(180 160 160)"
+                />
+                <use
+                  href="#r5"
+                  stroke="url(#gradient1)"
+                  transform="rotate(240 160 160)"
+                />
+                <use
+                  href="#r5"
+                  stroke="url(#gradient1)"
+                  transform="rotate(300 160 160)"
+                />
+                <use
+                  href="#r6"
+                  stroke="url(#gradient2)"
+                  transform="rotate(30 160 160)"
+                />
+                <use
+                  href="#r6"
+                  stroke="url(#gradient2)"
+                  transform="rotate(90 160 160)"
+                />
+                <use
+                  href="#r6"
+                  stroke="url(#gradient2)"
+                  transform="rotate(150 160 160)"
+                />
+                <use
+                  href="#r6"
+                  stroke="url(#gradient2)"
+                  transform="rotate(210 160 160)"
+                />
+                <use
+                  href="#r6"
+                  stroke="url(#gradient2)"
+                  transform="rotate(270 160 160)"
+                />
+                <use
+                  href="#r6"
+                  stroke="url(#gradient2)"
+                  transform="rotate(330 160 160)"
+                />
               </svg>
             </div>
             <p className="mt-2 text-5xl ostrich mb-12 sizesm marg">
