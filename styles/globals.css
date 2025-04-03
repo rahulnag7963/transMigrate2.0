@@ -5,8 +5,6 @@
 html,
 body {
   overflow: hidden;
-  overflow-anchor: none;
-  overflow-y: hidden;
   cursor: url("../media/circle.svg"), default;
   cursor: url("../media/circle.svg"), pointer;
 }
@@ -130,7 +128,6 @@ a {
 #Triangle-up_d:hover {
   opacity: 1;
   transition: all 1.4s;
-  filter: brightness(10%);
 }
 
 .triangle:hover {

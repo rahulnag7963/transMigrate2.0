@@ -1,10 +1,9 @@
 "use client";
 import { Link } from "@nextui-org/link";
-import { Image } from "@nextui-org/react";
 import "@/styles/globals.css";
 import { createContext } from "react";
 import goog from "@/media/pexels-googledeepmind-18068746.jpg";
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import ONC from "../media/onc.png";
 import { Fade } from "react-awesome-reveal";
@@ -15,11 +14,16 @@ import WAVES from "vanta/src/vanta.waves.js";
 import NET from "vanta/src/vanta.net.js";
 import Header from "@/components/header";
 import Relay from "../media/global.png";
-import { Pagination } from "@nextui-org/react";
-import { Accordion, AccordionItem, Spacer } from "@nextui-org/react";
-import { Modal, ModalContent, ModalBody } from "@nextui-org/react";
-import { Slider } from "@nextui-org/react";
-import { set } from "lodash";
+import {
+  Accordion,
+  AccordionItem,
+  Pagination,
+  Modal,
+  ModalContent,
+  ModalBody,
+  Slider,
+  Image,
+} from "@nextui-org/react";
 
 export default function Home() {
   const Context = createContext;
@@ -572,7 +576,7 @@ export default function Home() {
                         />
                         <div className="m-4">
                           <p className="text-5xl ostrich titlecard pb-8">
-                            Burgundy Diamond Mines
+                            Burgundy Diamond Mining Operations
                           </p>
                           <p className="text-3xl ostrich pb-4">
                             {" "}
