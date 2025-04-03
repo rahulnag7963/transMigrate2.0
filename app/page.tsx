@@ -1532,7 +1532,7 @@ export default function Home() {
                 height="320"
                 viewBox="0 0 320 320"
                 fill="none"
-                stroke="#000"
+                stroke="#32a852"
                 strokeLinecap="round"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
