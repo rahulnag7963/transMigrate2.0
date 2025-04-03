@@ -1536,6 +1536,7 @@ export default function Home() {
                 strokeLinecap="round"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
+                className="justify-self-center"
               >
                 <defs>
                   <path id="r1">
