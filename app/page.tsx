@@ -1532,14 +1532,14 @@ export default function Home() {
                 height="320"
                 viewBox="0 0 320 320"
                 fill="none"
-                stroke="#32a852"
+                stroke="#000"
                 strokeLinecap="round"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
                 className="justify-self-center"
               >
                 <defs>
-                  <path id="r1">
+                  <path id="r1" stroke="#f31260">
                     <animate
                       id="p1"
                       attributeName="d"
@@ -1555,7 +1555,7 @@ export default function Home() {
                       begin="p1.begin"
                     />
                   </path>
-                  <path id="r2">
+                  <path id="r2" stroke="#5d13dd">
                     <animate
                       attributeName="d"
                       values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0"
@@ -1571,7 +1571,7 @@ export default function Home() {
                       begin="p1.begin+1s"
                     />
                   </path>
-                  <path id="r3">
+                  <path id="r3" stroke="#f31260">
                     <animate
                       attributeName="d"
                       values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0"
@@ -1587,7 +1587,7 @@ export default function Home() {
                       begin="p1.begin+2s"
                     />
                   </path>
-                  <path id="r4">
+                  <path id="r4" stroke="#5d13dd">
                     <animate
                       id="p1"
                       attributeName="d"
@@ -1604,7 +1604,7 @@ export default function Home() {
                       begin="p1.begin+3s"
                     />
                   </path>
-                  <path id="r5">
+                  <path id="r5" stroke="#f31260">
                     <animate
                       attributeName="d"
                       values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0"
@@ -1620,7 +1620,7 @@ export default function Home() {
                       begin="p1.begin+4s"
                     />
                   </path>
-                  <path id="r6">
+                  <path id="r6" stroke="#5d13dd">
                     <animate
                       attributeName="d"
                       values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0"
