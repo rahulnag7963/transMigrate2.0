@@ -1533,7 +1533,7 @@ export default function Home() {
                 viewBox="0 0 320 320"
                 fill="none"
                 stroke="#000"
-                stroke-linecap="round"
+                strokeLinecap="round"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
               >
