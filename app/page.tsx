@@ -1528,13 +1528,12 @@ export default function Home() {
             <div className="glass mx-auto space max-w-96">
               <svg
                 version="1.1"
-                width="320px"
-                height="320px"
+                width="320"
+                height="320"
                 viewBox="0 0 320 320"
                 fill="none"
-                stroke="#32a852"
-                strokeLinecap="round"
-                className="justify-self-center"
+                stroke="#000"
+                stroke-linecap="round"
                 xmlns="http://www.w3.org/2000/svg"
                 xmlnsXlink="http://www.w3.org/1999/xlink"
               >
@@ -1546,14 +1545,13 @@ export default function Home() {
                       values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0"
                       dur="6s"
                       repeatCount="indefinite"
-                      begin="0s"
                     />
                     <animate
-                      attributeName="strokeWidth"
+                      attributeName="stroke-width"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
-                      begin="0s"
+                      begin="p1.begin"
                     />
                   </path>
                   <path id="r2">
@@ -1565,7 +1563,7 @@ export default function Home() {
                       begin="p1.begin+1s"
                     />
                     <animate
-                      attributeName="strokeWidth"
+                      attributeName="stroke-width"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
@@ -1581,7 +1579,7 @@ export default function Home() {
                       begin="p1.begin+2s"
                     />
                     <animate
-                      attributeName="strokeWidth"
+                      attributeName="stroke-width"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
@@ -1598,7 +1596,7 @@ export default function Home() {
                       begin="p1.begin+3s"
                     />
                     <animate
-                      attributeName="strokeWidth"
+                      attributeName="stroke-width"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
@@ -1614,7 +1612,7 @@ export default function Home() {
                       begin="p1.begin+4s"
                     />
                     <animate
-                      attributeName="strokeWidth"
+                      attributeName="stroke-width"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
@@ -1630,7 +1628,7 @@ export default function Home() {
                       begin="p1.begin+5s"
                     />
                     <animate
-                      attributeName="strokeWidth"
+                      attributeName="stroke-width"
                       values="0;4;4;4;0"
                       dur="6s"
                       repeatCount="indefinite"
@@ -1638,42 +1636,42 @@ export default function Home() {
                     />
                   </path>
                 </defs>
-                <use href="#r1" />
-                <use href="#r1" transform="rotate(60 160 160)" />
-                <use href="#r1" transform="rotate(120 160 160)" />
-                <use href="#r1" transform="rotate(180 160 160)" />
-                <use href="#r1" transform="rotate(240 160 160)" />
-                <use href="#r1" transform="rotate(300 160 160)" />
-                <use href="#r2" transform="rotate(30 160 160)" />
-                <use href="#r2" transform="rotate(90 160 160)" />
-                <use href="#r2" transform="rotate(150 160 160)" />
-                <use href="#r2" transform="rotate(210 160 160)" />
-                <use href="#r2" transform="rotate(270 160 160)" />
-                <use href="#r2" transform="rotate(330 160 160)" />
-                <use href="#r3" />
-                <use href="#r3" transform="rotate(60 160 160)" />
-                <use href="#r3" transform="rotate(120 160 160)" />
-                <use href="#r3" transform="rotate(180 160 160)" />
-                <use href="#r3" transform="rotate(240 160 160)" />
-                <use href="#r3" transform="rotate(300 160 160)" />
-                <use href="#r4" transform="rotate(30 160 160)" />
-                <use href="#r4" transform="rotate(90 160 160)" />
-                <use href="#r4" transform="rotate(150 160 160)" />
-                <use href="#r4" transform="rotate(210 160 160)" />
-                <use href="#r4" transform="rotate(270 160 160)" />
-                <use href="#r4" transform="rotate(330 160 160)" />
-                <use href="#r5" />
-                <use href="#r5" transform="rotate(60 160 160)" />
-                <use href="#r5" transform="rotate(120 160 160)" />
-                <use href="#r5" transform="rotate(180 160 160)" />
-                <use href="#r5" transform="rotate(240 160 160)" />
-                <use href="#r5" transform="rotate(300 160 160)" />
-                <use href="#r6" transform="rotate(30 160 160)" />
-                <use href="#r6" transform="rotate(90 160 160)" />
-                <use href="#r6" transform="rotate(150 160 160)" />
-                <use href="#r6" transform="rotate(210 160 160)" />
-                <use href="#r6" transform="rotate(270 160 160)" />
-                <use href="#r6" transform="rotate(330 160 160)" />
+                <use xlinkHref="#r1" />
+                <use xlinkHref="#r1" transform="rotate(60 160 160)" />
+                <use xlinkHref="#r1" transform="rotate(120 160 160)" />
+                <use xlinkHref="#r1" transform="rotate(180 160 160)" />
+                <use xlinkHref="#r1" transform="rotate(240 160 160)" />
+                <use xlinkHref="#r1" transform="rotate(300 160 160)" />
+                <use xlinkHref="#r2" transform="rotate(30 160 160)" />
+                <use xlinkHref="#r2" transform="rotate(90 160 160)" />
+                <use xlinkHref="#r2" transform="rotate(150 160 160)" />
+                <use xlinkHref="#r2" transform="rotate(210 160 160)" />
+                <use xlinkHref="#r2" transform="rotate(270 160 160)" />
+                <use xlinkHref="#r2" transform="rotate(330 160 160)" />
+                <use xlinkHref="#r3" />
+                <use xlinkHref="#r3" transform="rotate(60 160 160)" />
+                <use xlinkHref="#r3" transform="rotate(120 160 160)" />
+                <use xlinkHref="#r3" transform="rotate(180 160 160)" />
+                <use xlinkHref="#r3" transform="rotate(240 160 160)" />
+                <use xlinkHref="#r3" transform="rotate(300 160 160)" />
+                <use xlinkHref="#r4" transform="rotate(30 160 160)" />
+                <use xlinkHref="#r4" transform="rotate(90 160 160)" />
+                <use xlinkHref="#r4" transform="rotate(150 160 160)" />
+                <use xlinkHref="#r4" transform="rotate(210 160 160)" />
+                <use xlinkHref="#r4" transform="rotate(270 160 160)" />
+                <use xlinkHref="#r4" transform="rotate(330 160 160)" />
+                <use xlinkHref="#r5" />
+                <use xlinkHref="#r5" transform="rotate(60 160 160)" />
+                <use xlinkHref="#r5" transform="rotate(120 160 160)" />
+                <use xlinkHref="#r5" transform="rotate(180 160 160)" />
+                <use xlinkHref="#r5" transform="rotate(240 160 160)" />
+                <use xlinkHref="#r5" transform="rotate(300 160 160)" />
+                <use xlinkHref="#r6" transform="rotate(30 160 160)" />
+                <use xlinkHref="#r6" transform="rotate(90 160 160)" />
+                <use xlinkHref="#r6" transform="rotate(150 160 160)" />
+                <use xlinkHref="#r6" transform="rotate(210 160 160)" />
+                <use xlinkHref="#r6" transform="rotate(270 160 160)" />
+                <use xlinkHref="#r6" transform="rotate(330 160 160)" />
               </svg>
             </div>
             <p className="mt-2 text-5xl ostrich mb-12 sizesm marg">
