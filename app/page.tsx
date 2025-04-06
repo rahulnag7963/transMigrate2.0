@@ -159,6 +159,7 @@ export default function Home() {
             : "#four";
     document.querySelector(sectionId)?.scrollIntoView({ behavior: "smooth" });
   };
+
   return (
     <div className="h-auto z-10">
       <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" />
@@ -1689,21 +1690,25 @@ export default function Home() {
         </Fade>
       </section>
       <Header setSection={setSection} />
-      <div className="fixed overide z-20 ostrich box-border">
-        <Pagination
-          className=""
-          showShadow
-          loop
-          showControls
-          color="danger"
-          total={4}
-          initialPage={1}
-          page={section}
-          onChange={(page) => {
-            handlePageClick(page);
-          }}
-        />
-      </div>
+      {small <= 0 ? (
+        <div className="fixed overide z-20 ostrich box-border">
+          <Pagination
+            className=""
+            showShadow
+            loop
+            showControls
+            color="danger"
+            total={4}
+            initialPage={1}
+            page={section}
+            onChange={(page) => {
+              handlePageClick(page);
+            }}
+          />
+        </div>
+      ) : (
+        <></>
+      )}
       <div className="loading-page z-30">
         <svg
           className="logo"
