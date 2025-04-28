@@ -604,7 +604,7 @@ export default function Home() {
                           <Link
                             isExternal
                             className="w-100 ostrich text-xl cardsize links text-white/80"
-                            href="https://canadamark1dev.wpenginepowered.com/"
+                            href="https://canadamark.com/"
                             showAnchorIcon
                           >
                             Burgundy Website
