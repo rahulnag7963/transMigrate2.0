@@ -180,7 +180,7 @@ export default function Home() {
             <div>
               <div className="header">
                 <p id="sec" className="text-center z-20 text-7xl size">
-                  Taking Web Development
+                  Taking Software Applications
                 </p>
                 <p className="text-center text-7xl pb-6 size">
                   to the next level
@@ -322,7 +322,7 @@ export default function Home() {
           <div className="four"></div>
           <div className="text-center z-10 justify-self-center ">
             <p className="text-7xl z-10 text-center ostrich size">
-              Simplifying and optimizing websites
+              Simplifying software development
             </p>
             <div className="grid grid rows-1 grid-cols-2 p-2 z-10 m-2 max-w-6xl justify-items-center items-center">
               <a
@@ -487,30 +487,34 @@ export default function Home() {
                     className="unset p-0"
                     key="1"
                     aria-label="Accordion 1"
-                    title="Our goals"
+                    title="Services Provided"
                   >
                     <div className="linesm sizesm divide-y-2 divide-white/25 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-pink-600 to-purple-600">
                       <span className="linesm header text-3xl sizesm">
                         {" "}
                         1.{" "}
                       </span>{" "}
-                      Transmigrate&apos;s goal is to create unique websites
-                      optimized for seo and performance.
+                      Transmigrate&apos;s goal is to create unique software
+                      applications for your company. We can create fullstack
+                      apps, mobile apps and even websites that require custom
+                      code
                     </div>
                   </AccordionItem>
                   <AccordionItem
                     className="unset"
                     key="2"
                     aria-label="Accordion 2"
-                    title="Our desire"
+                    title="Tailored Solutions"
                   >
                     <div className="sizesm linesm line-divide-y-2 divide-white/25 text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-pink-600 to-purple-600">
                       <span className="header linesm text-3xl sizesm">
                         {" "}
                         2.{" "}
                       </span>{" "}
-                      We know how important it is to have a website that both
+                      We know how important it is to have a service that both
                       reflects your brand and reaches the audience you desire.
+                      Thats why our company is dedicated to creating software
+                      that is tailored to your needs.
                     </div>
                   </AccordionItem>
                   <AccordionItem
@@ -524,9 +528,9 @@ export default function Home() {
                         {" "}
                         3.{" "}
                       </span>{" "}
-                      Thats why our company is dedicated to creating websites
-                      that deals with both problems, freeing your time to focus
-                      on what you do best.
+                      Thats why our company is dedicated to creating software
+                      that deals with both frontend and backend of your
+                      business, freeing your time to focus on what you do best.
                     </div>
                   </AccordionItem>
                 </Accordion>
@@ -581,7 +585,7 @@ export default function Home() {
                           </p>
                           <p className="text-3xl ostrich pb-4">
                             {" "}
-                            Contract Web Developer
+                            Contract Fullstack Developer
                           </p>
                           <div className="text-xl ostrich cardsize padb">
                             <p className="text-xl ostrich cardsize pb-4">
@@ -590,16 +594,17 @@ export default function Home() {
                               jewelery across the globe.
                             </p>
                             <p className="text-xl ostrich cardsize pb-4">
-                              - This company wanted a website showcasing the
-                              process of what it takes to create thier unique
-                              diamonds (website linked below)
+                              - This company wanted an eccommerce platform that
+                              would allow them to advertsie and sell their
+                              products online.
                             </p>
                             Created using the following technologies:
                             <li>wordpress</li>
                             Along side custom coded parts which were made using:
                             <li>tailwind</li>
-                            <li>vanila javascript</li>
+                            <li>PHP and javascript</li>
                             <li>html and css</li>
+                            <li>woocommerce</li>
                           </div>
                           <Link
                             isExternal
@@ -642,7 +647,7 @@ export default function Home() {
                           </p>
                           <p className="text-3xl ostrich pb-4">
                             {" "}
-                            Software Developer Intern
+                            Software Developer
                           </p>
                           <div className="text-xl ostrich cardsize padb">
                             <p className="text-xl ostrich cardsize pb-4">
@@ -704,7 +709,7 @@ export default function Home() {
                           </p>
                           <p className="text-3xl ostrich pb-4">
                             {" "}
-                            Software Developer Intern
+                            Software Developer
                           </p>
                           <div className="text-xl ostrich cardsize padb">
                             <p className="text-xl ostrich cardsize pb-4">
@@ -1271,7 +1276,7 @@ export default function Home() {
                               fill="#044B94"
                               fillOpacity="0.4"
                             >
-                              GenieBox
+                              Habush Mobile App
                             </text>
                             <text
                               x="50%"
