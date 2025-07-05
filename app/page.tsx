@@ -6,6 +6,7 @@ import goog from "@/media/pexels-googledeepmind-18068746.jpg";
 import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import ONC from "../media/onc.png";
+import UNITY from "../media/unity-logo.png";
 import { Fade } from "react-awesome-reveal";
 import _debounce from "lodash/debounce";
 import diamonds from "../media/l1.jpg";
@@ -40,6 +41,7 @@ export default function Home() {
   const [card1, showCard1] = useState(false);
   const [card2, showCard2] = useState(false);
   const [card3, showCard3] = useState(false);
+  const [card4, showCard4] = useState(false);
 
   const [img, setImg] = useState(true);
   const [step, setStep] = useState(1);
@@ -744,6 +746,69 @@ export default function Home() {
                   )}
                 </ModalContent>
               </Modal>
+              <Modal
+                isOpen={card4}
+                onOpenChange={showCard4}
+                size="full"
+                backdrop="blur"
+                placement="center"
+                className="justify-items-center items-center"
+                classNames={{ closeButton: "mt-24 mr-6" }}
+              >
+                <ModalContent>
+                  {(onClose) => (
+                    <>
+                      <ModalBody className="grid grid-cols-2 gap-4 p-0 justify-items-center items-center">
+                        <Image
+                          alt="Burgundy Diamond mines"
+                          className="brand max-w-md m-4"
+                          height="h-100"
+                          src={UNITY.src}
+                          width="w-100"
+                          isZoomed={img}
+                        />
+                        <div className="m-4">
+                          <p className="text-5xl ostrich titlecard pb-8">
+                            The Great Escape Unity Game
+                          </p>
+                          <p className="text-3xl ostrich pb-4">
+                            {" "}
+                            XR Development Personal Project
+                          </p>
+                          <div className="text-xl ostrich cardsize padb">
+                            <p className="text-xl ostrich cardsize pb-4">
+                              - Created a mixed reality game using Unity engine,
+                              openXR and C#.
+                            </p>
+                            <p className="text-xl ostrich cardsize pb-4">
+                              - Game involes a player trying to escape a room
+                              that traps the user once they enter the room.
+                            </p>
+                            <p className="text-xl ostrich pb-4 cardsize">
+                              - The game uses a variety of different
+                              interactions such as picking up objects,
+                              activating buttons, socket interactions, among
+                              others.
+                            </p>
+                            Technoloiges used:
+                            <li>Unity</li>
+                            <li>openXR</li>
+                            <li>C#</li>
+                          </div>
+                          <Link
+                            isExternal
+                            className="w-100 ostrich text-xl cardsize text-left text-white/80 links"
+                            href="https://github.com/rahulnag7963/The-Great-Escape"
+                            showAnchorIcon
+                          >
+                            GitHub Repo
+                          </Link>
+                        </div>
+                      </ModalBody>
+                    </>
+                  )}
+                </ModalContent>
+              </Modal>
             </div>
             <a
               href="#four"
@@ -1111,7 +1176,10 @@ export default function Home() {
             {step > 1.5 && (
               <Fade duration={1500}>
                 <div className="grid grid-cols-1 grid-rows-2 max-w-6xl justify-self-center z-20">
-                  <button className="justify-self-center main" disabled>
+                  <button
+                    className="justify-self-center main"
+                    onClick={() => showCard4(true)}
+                  >
                     <svg
                       viewBox="0 0 64.00 64.00"
                       version="1.1"
@@ -1182,7 +1250,7 @@ export default function Home() {
                             fill="#044B94"
                             fillOpacity="0.4"
                           >
-                            Paleo-Classifier
+                            The great escape XR app
                           </text>
                           <text
                             x="50%"
@@ -1194,9 +1262,7 @@ export default function Home() {
                             stroke="white"
                             fill="#044B94"
                             fillOpacity="0.4"
-                          >
-                            (Under Development)
-                          </text>
+                          ></text>
                         </g>{" "}
                       </g>
                     </svg>
@@ -1366,7 +1432,7 @@ export default function Home() {
                               fill="#044B94"
                               fillOpacity="0.4"
                             >
-                              Job Aggregator
+                              Paleo-Classifier
                             </text>
                             <text
                               x="50%"
